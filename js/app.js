@@ -36,7 +36,7 @@ const feed = [
 	{
 		author: "Former Classmate",
 		text: "Beautiful! This man is a work of art!!",
-		img: "https://images.unsplash.com/photo-1587077833251-33d392689bde?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ",
+		img: "https://images.unsplash.com/photo-1572609141402-a5538142051f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ",
 		title: "DJ Khaled Said Something You Won't Believe",
 		description: "To be successful you’ve got to work hard, to make history, simple, you’ve got to make it. Learning is cool, but knowing is better, and I know the key to success. A major key, never panic. Don’t panic, when it gets crazy and rough, don’t panic, stay calm. I’m up to something. Wraith talk. Fan luv. Fan luv. You smart, you loyal, you a genius.",
 		likes: 0,
