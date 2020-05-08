@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,208 +14,212 @@
     <script src="/js/vue.min.js" async></script>
     <script src="/js/app.js" async></script>
   </head>
+
   <body>
     <div id="app">
-    	<header class="header">
-    		<div class="nav__main">
-    			<div id="logo">
-    				<img src="/img/pang_57x57.png" width="44" height="44">
-    			</div>
-    			<nav class="nav__primary">
-    				<ul>
-    					<li>
+      <header class="header">
+        <div class="nav__main">
+          <div id="logo">
+            <img src="/img/pang_57x57.png" width="44" height="44">
+          </div>
+          <nav class="nav__primary">
+            <ul>
+              <li>
                 <button class="non-button"><i class="far fa-newspaper fa-2x" title="Feed" @click="scrollToFeed"></i></button>
               </li>
-    					<li>
+              <li>
                 <button class="non-button"><i class="fas fa-gamepad fa-2x" title="Games" @click="toggleGames"></i></button>
               </li>
-    					<li>
+              <li>
                 <button class="non-button"><i class="far fa-comments fa-2x" title="Messages" @click="toggleMessages"></i></button>
               </li>
-    				</ul>
-    			</nav>
-    			<nav class="nav__secondary">
-    				<ul>
-    					<li>
+            </ul>
+          </nav>
+          <nav class="nav__secondary">
+            <ul>
+              <li>
                 <button class="non-button" @click="toggleAccount"><i class="far fa-user fa-2x" title="Account"></i></button>
               </li>
-    				</ul>
-    			</nav>
-    		</div>
-    	</header>
-    	<section class="theGoodStuff">
-    		<div class="theGoodStuff__main">
-    			<main class="feed">
-    				<header>
-    					<h1>Your Feed</h1>
-    				</header>
-    				<div class="feed__container">
-    					<section class="feed__item" v-for="article in feed">
-    						<header class="feed__header">
-    							<div class="counter__container">
-    								<p class="poster timestamp">{{article.author}}</p>
-    								<p class="poster timestamp">Likes <span class="counter">{{article.likes}}</span> | Dislikes <span class="counter">{{article.dislikes}}</span></p>
-    							</div>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <section class="theGoodStuff">
+        <div class="theGoodStuff__main">
+          <main class="feed">
+            <header>
+              <h1>Your Feed</h1>
+            </header>
+            <div class="feed__container">
+              <section class="feed__item" v-for="article in feed">
+                <header class="feed__header">
+                  <div class="counter__container">
+                    <p class="poster timestamp">{{article.author}}</p>
+                    <p class="poster timestamp">Likes <span class="counter">{{article.likes}}</span> | Dislikes <span class="counter">{{article.dislikes}}</span></p>
+                  </div>
 
-    							<!-- highscore overlay -->
-    							<transition name="bounce">
-    								<div class="overlay" v-show="article.highscore">
-    									<div class="highscore">
-    										You just reached the high score! Keep Going!
-    										<button class="close-pop" @click="closeHighscore(article)">
-    											<svg width="30" height="30">
-    												<path d="M5,5 25,25"/>
-    												<path d="M5,25 25,5"/>
-    											</svg>
-    										</button>
-    									</div>
-    								</div>
-    							</transition>
+                  <!-- highscore overlay -->
+                  <transition name="bounce">
+                    <div class="overlay" v-show="article.highscore">
+                      <div class="highscore">
+                        You just reached the high score! Keep Going!
+                        <button class="close-pop" @click="closeHighscore(article)">
+                          <svg width="30" height="30">
+                            <path d="M5,5 25,25" />
+                            <path d="M5,25 25,5" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </transition>
 
-    							<!-- lowscore overlay -->
-    							<transition name="slide-fade">
-    								<div class="overlay" v-show="article.lowscore">
-    									<div class="highscore lowscore">
-    										Wow... you really don't like this one, huh? I'm sorry 😢
-    										<button class="close-pop" @click="closeLowscore(article)">
-    											<svg width="30" height="30">
-    												<path d="M5,5 25,25"/>
-    												<path d="M5,25 25,5"/>
-    											</svg>
-    										</button>
-    									</div>
-    								</div>
-    							</transition>
+                  <!-- lowscore overlay -->
+                  <transition name="slide-fade">
+                    <div class="overlay" v-show="article.lowscore">
+                      <div class="highscore lowscore">
+                        Wow... you really don't like this one, huh? I'm sorry 😢
+                        <button class="close-pop" @click="closeLowscore(article)">
+                          <svg width="30" height="30">
+                            <path d="M5,5 25,25" />
+                            <path d="M5,25 25,5" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </transition>
 
-    							<!-- messages overlay -->
-    							<transition name="bounce">
-    								<div class="overlay" v-show="messages">
-    									<div class="highscore messages">
-    										Dang, no new messages. Now go outside!
-    										<button class="close-pop" @click="toggleMessages">
-    											<svg width="30" height="30">
-    												<path d="M5,5 25,25"/>
-    												<path d="M5,25 25,5"/>
-    											</svg>
-    										</button>
-    									</div>
-    								</div>
-    							</transition>
+                  <!-- messages overlay -->
+                  <transition name="bounce">
+                    <div class="overlay" v-show="messages">
+                      <div class="highscore messages">
+                        Dang, no new messages. Now go outside!
+                        <button class="close-pop" @click="toggleMessages">
+                          <svg width="30" height="30">
+                            <path d="M5,5 25,25" />
+                            <path d="M5,25 25,5" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </transition>
 
-    							<!-- games overlay -->
-    							<transition name="slide-fade">
-    								<div class="overlay" v-show="games">
-    									<div class="highscore games">
-    										Why on Earth do you want to play games here?? Go outside!
-    										<button class="close-pop" @click="toggleGames">
-    											<svg width="30" height="30">
-    												<path d="M5,5 25,25"/>
-    												<path d="M5,25 25,5"/>
-    											</svg>
-    										</button>
-    									</div>
-    								</div>
-    							</transition>
+                  <!-- games overlay -->
+                  <transition name="slide-fade">
+                    <div class="overlay" v-show="games">
+                      <div class="highscore games">
+                        Why on Earth do you want to play games here?? Go outside!
+                        <button class="close-pop" @click="toggleGames">
+                          <svg width="30" height="30">
+                            <path d="M5,5 25,25" />
+                            <path d="M5,25 25,5" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </transition>
 
-    							<!-- account overlay -->
-    							<transition name="fade">
-    								<div class="overlay" v-show="account">
-    									<div class="highscore account">
-    										<div class="account__options">
-    											<h2>Account Options</h2>
-    											<ol><li><button class="non-button" @click="closeAccount">Close Account</button></li></ol>
-    										</div>
-    										<button class="close-pop" @click="toggleAccount">
-    											<svg width="30" height="30">
-    												<path d="M5,5 25,25"/>
-    												<path d="M5,25 25,5"/>
-    											</svg>
-    										</button>
-    									</div>
-    								</div>
-    							</transition>
+                  <!-- account overlay -->
+                  <transition name="fade">
+                    <div class="overlay" v-show="account">
+                      <div class="highscore account">
+                        <div class="account__options">
+                          <h2>Account Options</h2>
+                          <ol>
+                            <li><button class="non-button" @click="closeAccount">Close Account</button></li>
+                          </ol>
+                        </div>
+                        <button class="close-pop" @click="toggleAccount">
+                          <svg width="30" height="30">
+                            <path d="M5,5 25,25" />
+                            <path d="M5,25 25,5" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </transition>
 
-    							<!-- account closed -->
-    							<transition name="bounce">
-    								<div class="overlay__closed" v-show="closed">
-    									<div class="account__closed">
-    										<h2>Thank you for closing your account!</h2>
-    										<p>We appreciate your time.</p>
-    										<p>If you would like to reopen your account, you can click the button below...</p>
-    										<p>But only if you <em>really, really</em> have to.</p>
-    										<button class="openAccount" @click="openAccount">
-    											Open Account
-    										</button>
-    									</div>
-    								</div>
-    							</transition>
+                  <!-- account closed -->
+                  <transition name="bounce">
+                    <div class="overlay__closed" v-show="closed">
+                      <div class="account__closed">
+                        <h2>Thank you for closing your account!</h2>
+                        <p>We appreciate your time.</p>
+                        <p>If you would like to reopen your account, you can click the button below...</p>
+                        <p>But only if you <em>really, really</em> have to.</p>
+                        <button class="openAccount" @click="openAccount">
+                          Open Account
+                        </button>
+                      </div>
+                    </div>
+                  </transition>
 
-    							<p class="poster__text">{{article.text}}</p>
-    						</header>
-    						<hr>
-    						<article class="feed__article">
-    							<img class="feed__article-image" :src="article.img" alt=''>
-    							<h2>{{article.title}}</h2>
-    							<p>{{article.description}}</p>
-    						</article>
-    						<div class="user__actions">
-    							<button @click="like(article)">Like</button>
-    							<button @click="dislike(article)">Dislike</button>
-    							<button @click="showComment(article)">Comment</button>
-    							<button @click="showShare(article)">Share</button>
-    						</div>
-    						<div class="share" v-show="article.share">
-    							<p><a :href="tweet" target="_blank" rel="noopener"><i class="fab fa-twitter fa-2x"></i> Tweet this Bad Boy</a></p>
-    						</div>
-    						<form v-show="article.comment" class="user__comment-form" @submit.prevent>
-    							<label for="name">Your Name (for fun):</label>
-    							<input @keypress.enter="postComment(article)" id="name" type="text" maxlength="100" v-model="article.newName">
-    							<label for="comment">Write your comment below:</label>
-    							<textarea id="comment" maxlength="300" v-model="article.newComment" @keypress.enter="postComment(article)"></textarea>
-    							<button type="submit" @click="postComment(article)">Post Comment</button>
-    						</form>
-    						<p class="error" v-show="article.error">Oops! Please put a name and comment.</p>
-    						<article class="user__comment" v-for="comment in article.comments">
-    							<p class="poster__text timestamp">{{comment.name}}</p>
-    							<p class="poster__text">{{comment.comment}}</p>
-    							<footer class="user__comment-footer">
-    								<p class="poster__text timestamp">{{comment.time}}</p>
-    							</footer>
-    						</article>
-    					</section>
-    				</div>
-    			</main>
-    			<aside class="friends">
-    				<h2>You Have No Friends 😢</h2>
-    				<div class="friends__text">
-    					<p class="poster">Bummer! Maybe try one of these instead?</p>
-    					<ul>
-    						<li>Learn to Juggle</li>
-    						<li>Adopt a Pet</li>
-    						<li>Pick up Baking</li>
-    						<li>Call a Friend</li>
-    						<li>Write a Song</li>
-    						<li>Start a Journal</li>
-    						<li>Just Watch Netflix</li>
-    					</ul>
-    				</div>
-    			</aside>
-    		</div>
-    		<aside class="info">
-    			<h2>Pang: a New Type of Social Media</h2>
-    			<div class="info__text">
-    				<p class="poster">Thanks for using Pang; I hope you enjoyed your time here.</p>
-    				<p>Created by <a href="https://troyv.dev/" target="_blank" rel="noopener">@troyvassalotti</a>. Got feedback? Let me know! <a href="https://twitter.com/lowercasetroy" target="_blank" rel="noopener">@lowercasetroy</a> on Twitter.</p>
-    				<p>Now, look at what you could be experiencing if you logged off right now.</p>
-    			</div>
-    			<div class="gallery">
-    				<img src='https://images.unsplash.com/photo-1544655120-8a026598b011?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ' alt=''>
-    				<img src='https://images.unsplash.com/photo-1581172051143-14dee6995034?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ' alt=''>
-    				<img src='https://images.unsplash.com/photo-1582904786476-bb32f4779aa7?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ' alt=''>
-    				<img src='https://images.unsplash.com/photo-1586877773568-ca6dcf101456?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ' alt=''>
-    			</div>
-    		</aside>
-    	</section>
+                  <p class="poster__text">{{article.text}}</p>
+                </header>
+                <hr>
+                <article class="feed__article">
+                  <img class="feed__article-image" :src="article.img" alt=''>
+                  <h2>{{article.title}}</h2>
+                  <p>{{article.description}}</p>
+                </article>
+                <div class="user__actions">
+                  <button @click="like(article)">Like</button>
+                  <button @click="dislike(article)">Dislike</button>
+                  <button @click="showComment(article)">Comment</button>
+                  <button @click="showShare(article)">Share</button>
+                </div>
+                <div class="share" v-show="article.share">
+                  <p><a :href="tweet" target="_blank" rel="noopener"><i class="fab fa-twitter fa-2x"></i> Tweet this Bad Boy</a></p>
+                </div>
+                <form v-show="article.comment" class="user__comment-form" @submit.prevent>
+                  <label for="name">Your Name (for fun):</label>
+                  <input @keypress.enter="postComment(article)" id="name" type="text" maxlength="100" v-model="article.newName">
+                  <label for="comment">Write your comment below:</label>
+                  <textarea id="comment" maxlength="300" v-model="article.newComment" @keypress.enter="postComment(article)"></textarea>
+                  <button type="submit" @click="postComment(article)">Post Comment</button>
+                </form>
+                <p class="error" v-show="article.error">Oops! Please put a name and comment.</p>
+                <article class="user__comment" v-for="comment in article.comments">
+                  <p class="poster__text timestamp">{{comment.name}}</p>
+                  <p class="poster__text">{{comment.comment}}</p>
+                  <footer class="user__comment-footer">
+                    <p class="poster__text timestamp">{{comment.time}}</p>
+                  </footer>
+                </article>
+              </section>
+            </div>
+          </main>
+          <aside class="friends">
+            <h2>You Have No Friends 😢</h2>
+            <div class="friends__text">
+              <p class="poster">Bummer! Maybe try one of these instead?</p>
+              <ul>
+                <li>Learn to Juggle</li>
+                <li>Adopt a Pet</li>
+                <li>Pick up Baking</li>
+                <li>Call a Friend</li>
+                <li>Write a Song</li>
+                <li>Start a Journal</li>
+                <li>Just Watch Netflix</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+        <aside class="info">
+          <h2>Pang: a New Type of Social Media</h2>
+          <div class="info__text">
+            <p class="poster">Thanks for using Pang; I hope you enjoyed your time here.</p>
+            <p>Created by <a href="https://troyv.dev/" target="_blank" rel="noopener">@troyvassalotti</a>. Got feedback? Let me know! <a href="https://twitter.com/lowercasetroy" target="_blank" rel="noopener">@lowercasetroy</a> on Twitter.</p>
+            <p>Now, look at what you could be experiencing if you logged off right now.</p>
+          </div>
+          <div class="gallery">
+            <img src='https://images.unsplash.com/photo-1544655120-8a026598b011?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ' alt=''>
+            <img src='https://images.unsplash.com/photo-1581172051143-14dee6995034?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ' alt=''>
+            <img src='https://images.unsplash.com/photo-1582904786476-bb32f4779aa7?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ' alt=''>
+            <img src='https://images.unsplash.com/photo-1586877773568-ca6dcf101456?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ' alt=''>
+          </div>
+        </aside>
+      </section>
     </div>
   </body>
+
 </html>

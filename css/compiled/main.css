@@ -34,7 +34,7 @@ main {
  */
 h1 {
 	font-size: 2em;
-	margin: 0.67em 0;
+	margin: .67em 0;
 }
 
 /* Grouping content
@@ -186,20 +186,20 @@ select {
 /**
  * Correct the inability to style clickable types in iOS and Safari.
  */
-button,
 [type="button"],
 [type="reset"],
-[type="submit"] {
+[type="submit"],
+button {
 	-webkit-appearance: button;
 }
 
 /**
  * Remove the inner border and padding in Firefox.
  */
-button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
+[type="submit"]::-moz-focus-inner,
+button::-moz-focus-inner {
 	border-style: none;
 	padding: 0;
 }
@@ -207,10 +207,10 @@ button::-moz-focus-inner,
 /**
  * Restore the focus styles unset by the previous rule.
  */
-button:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
+[type="submit"]:-moz-focusring,
+button:-moz-focusring {
 	outline: 1px dotted ButtonText;
 }
 
@@ -218,7 +218,7 @@ button:-moz-focusring,
  * Correct the padding in Firefox.
  */
 fieldset {
-	padding: 0.35em 0.75em 0.625em;
+	padding: .35em .75em .625em;
 }
 
 /**
@@ -357,7 +357,12 @@ body {
 	place-items: center;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	font-family: "Lora", Georgia, serif;
 	margin-top: 15px;
 	margin-bottom: 15px;
@@ -445,7 +450,8 @@ hr {
 	width: max-content;
 }
 
-.user__comment-form #comment, .user__comment-form #name {
+.user__comment-form #comment,
+.user__comment-form #name {
 	width: 90%;
 	margin: .5em 0;
 }
@@ -508,7 +514,7 @@ hr {
 
 .feed__article {
 	background-color: rgba(222, 224, 225, 0.5);
-	box-shadow: 0px 0px 5px 5px #9fa1a5;
+	box-shadow: 0 0 5px 5px #9fa1a5;
 	border-radius: .5em;
 	padding: .5em;
 }
@@ -720,16 +726,21 @@ hr {
 	transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
 }
 
-.slide-fade-enter, .slide-fade-leave-to {
+/* .slide-fade-leave-active below version 2.1.8 */
+.slide-fade-enter,
+.slide-fade-leave-to {
 	transform: translateX(10px);
 	opacity: 0;
 }
 
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active,
+.fade-leave-active {
 	transition: opacity .5s;
 }
 
-.fade-enter, .fade-leave-to {
+/* .fade-leave-active below version 2.1.8 */
+.fade-enter,
+.fade-leave-to {
 	opacity: 0;
 }
 
@@ -760,7 +771,8 @@ hr {
 	.theGoodStuff__main {
 		margin-left: 1.5em;
 	}
-	.friends__text, .info__text {
+	.friends__text,
+	.info__text {
 		padding: .5em .5em 1.5em;
 	}
 	.info {
