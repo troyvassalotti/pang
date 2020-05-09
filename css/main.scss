@@ -1,11 +1,12 @@
 @import "_globals";
+@import "_fonts";
 @import "normalize";
 
 html {
 	background-color: $light;
 	color: $black;
 	scroll-behavior: smooth;
-	font: normal normal normal calc(14px + (26 - 14) * ((100vw - 320px) / (6000 - 320)))/1.5 "Raleway", "Helvetica", Verdana, sans-serif;
+	font: normal normal normal calc(14px + (26 - 14) * ((100vw - 320px) / (6000 - 320)))/1.5 "Fira Sans", "Helvetica", Verdana, sans-serif;
 }
 
 body {
@@ -215,7 +216,7 @@ hr {
 	button {
 		font: {
 			size: 82%;
-			family: "Raleway";
+			family: "Fira Sans";
 		}
 		padding: .75em 1em;
 		border-radius: .5em;
