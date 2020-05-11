@@ -401,7 +401,7 @@ template {
 }
 
 html {
-	background-color: #f0e9e9;
+	background: #f0e9e9;
 	color: #02040F;
 	scroll-behavior: smooth;
 	font: normal normal normal calc(14px + (26 - 14) * ((100vw - 320px) / (6000 - 320)))/1.5 "Fira Sans", "Helvetica", Verdana, sans-serif;
@@ -426,7 +426,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: "Lora", Georgia, serif;
+	font-family: "Lora", serif;
 	margin-top: 15px;
 	margin-bottom: 15px;
 }
@@ -463,6 +463,10 @@ hr {
 	top: 0;
 }
 
+.header ul {
+	list-style: none;
+}
+
 .nav__main {
 	padding-top: .5em;
 	padding-bottom: .5em;
@@ -486,7 +490,6 @@ hr {
 
 .nav__primary ul {
 	display: flex;
-	list-style: none;
 	justify-content: space-evenly;
 	align-content: center;
 	width: 100%;
@@ -494,10 +497,6 @@ hr {
 
 .nav__secondary {
 	justify-self: end;
-}
-
-.nav__secondary ul {
-	list-style: none;
 }
 
 .theGoodStuff {
@@ -515,7 +514,6 @@ hr {
 
 .user__comment-form #comment,
 .user__comment-form #name {
-	width: 90%;
 	margin: .5em 0;
 }
 
@@ -525,7 +523,7 @@ hr {
 
 .user__comment {
 	border-radius: 1.5em;
-	background-color: #E8E8EF;
+	background: #E8E8EF;
 	padding: .5em 1em;
 }
 
@@ -538,6 +536,7 @@ hr {
 	place-items: start;
 	grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
 	gap: 1em;
+	padding: 5px;
 }
 
 .poster {
@@ -568,7 +567,7 @@ hr {
 
 .feed__item {
 	padding: .5em .5em 1.5em;
-	background-color: #BEC0C3;
+	background: #BEC0C3;
 	border-radius: 1em;
 	display: grid;
 	gap: 1em;
@@ -576,7 +575,7 @@ hr {
 }
 
 .feed__article {
-	background-color: rgba(222, 224, 225, 0.5);
+	background: rgba(222, 224, 225, 0.5);
 	box-shadow: 0 0 5px 5px #9fa1a5;
 	border-radius: .5em;
 	padding: .5em;
@@ -592,7 +591,6 @@ hr {
 }
 
 .feed__article-image {
-	max-width: 600px;
 	margin: auto;
 }
 
@@ -604,7 +602,7 @@ hr {
 
 .user__actions button {
 	font-size: 82%;
-	font-family: "Fira Sans";
+	font-family: "Fira Sans", sans-serif;
 	padding: .75em 1em;
 	border-radius: .5em;
 	background: #7D002D;
@@ -612,7 +610,7 @@ hr {
 }
 
 .error {
-	color: #7d002d;
+	color: #7D002D;
 }
 
 .share {
@@ -629,6 +627,10 @@ hr {
 	color: #02040F;
 }
 
+.share a:hover {
+	color: #006088;
+}
+
 .counter__container {
 	display: flex;
 	justify-content: space-between;
@@ -637,11 +639,11 @@ hr {
 
 .counter {
 	color: #02040F;
-	background-color: #f0e9e9;
+	background: #f0e9e9;
 	padding: 2px 4px;
 	border-radius: 50%;
 	font-size: 80%;
-	font-family: "Lora";
+	font-family: "Lora", serif;
 }
 
 .overlay {
@@ -650,14 +652,12 @@ hr {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(50, 50, 50, 0.5);
+	background: rgba(50, 50, 50, 0.5);
 	display: grid;
 	place-items: center;
 }
 
-.highscore {
-	background-color: #7D002D;
-	color: #f0e9e9;
+.popup {
 	padding: 2em 1em;
 	border-radius: 1em;
 	text-align: center;
@@ -667,46 +667,39 @@ hr {
 	font-size: 150%;
 }
 
-.highscore button {
-	background-color: transparent;
+.popup button {
+	background: transparent;
 	border: none;
 }
 
-.highscore button > svg {
+.popup button > svg {
 	stroke-width: 3;
 	stroke: #f0e9e9;
 }
 
-.info {
-	background-color: #dee0e1;
-	border: 2px solid #02040F;
-	padding-left: 1em;
-	padding-right: 1em;
-	padding-bottom: 1em;
-	margin-top: 1em;
-	border-radius: 1em;
-}
-
-.friends {
-	background-color: rgba(229, 149, 0, 0.5);
-	border: 2px solid #02040F;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-top: 1em;
-	border-radius: 1em;
+.highscore {
+	background: #7D002D;
+	color: #f0e9e9;
 }
 
 .lowscore {
-	background-color: #006088;
+	background: #006088;
+	color: #f0e9e9;
 }
 
 .messages {
-	background-color: #3D348B;
+	background: #3D348B;
+	color: #f0e9e9;
 }
 
 .games {
-	background-color: #e59500;
+	background: #e59500;
 	color: #02040F;
+}
+
+.account {
+	background: #7D002D;
+	color: #f0e9e9;
 }
 
 .account__options {
@@ -734,16 +727,9 @@ hr {
 	list-style-position: inside;
 }
 
-.overlay__closed {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: #02040F;
+.closed {
+	background: #02040F;
 	color: #f0e9e9;
-	display: grid;
-	place-items: center;
 }
 
 .account__closed {
@@ -752,11 +738,33 @@ hr {
 
 .openAccount {
 	border: none;
-	background-color: #f0e9e9;
+	background: #f0e9e9;
 	padding: 1em;
 	font-weight: bold;
-	font-family: "Lora";
+	font-family: "Lora", serif;
 	color: #02040F;
+}
+
+.openAccount:hover {
+	background: #3D348B;
+	color: #f0e9e9;
+}
+
+.friends,
+.info {
+	border: 2px solid #02040F;
+	padding-left: 1em;
+	padding-right: 1em;
+	margin-top: 1em;
+	border-radius: 1em;
+}
+
+.info {
+	background: #dee0e1;
+}
+
+.friends {
+	background: rgba(229, 149, 0, 0.5);
 }
 
 .bounce-enter-active {
@@ -828,21 +836,12 @@ hr {
 		flex-direction: row-reverse;
 		align-items: baseline;
 		justify-content: space-evenly;
-		width: 100%;
+		width: 99%;
 		padding: 0;
-	}
-	.theGoodStuff__main {
-		margin-left: 1.5em;
-	}
-	.friends__text,
-	.info__text {
-		padding: .5em .5em 1.5em;
 	}
 	.info {
 		max-width: 350px;
-	}
-	.info__text {
-		width: 80%;
+		margin-right: 1.5em;
 	}
 	.gallery {
 		display: grid;

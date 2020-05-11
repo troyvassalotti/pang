@@ -60,7 +60,7 @@
                   <!-- highscore overlay -->
                   <transition name="bounce">
                     <div class="overlay" v-show="article.highscore">
-                      <div class="highscore">
+                      <div class="popup">
                         You just reached the high score! Keep Going!
                         <button class="close-pop" @click="closeHighscore(article)">
                           <svg width="30" height="30">
@@ -75,7 +75,7 @@
                   <!-- lowscore overlay -->
                   <transition name="slide-fade">
                     <div class="overlay" v-show="article.lowscore">
-                      <div class="highscore lowscore">
+                      <div class="popup lowscore">
                         Wow... you really don't like this one, huh? I'm sorry 😢
                         <button class="close-pop" @click="closeLowscore(article)">
                           <svg width="30" height="30">
@@ -90,7 +90,7 @@
                   <!-- messages overlay -->
                   <transition name="bounce">
                     <div class="overlay" v-show="messages">
-                      <div class="highscore messages">
+                      <div class="popup messages">
                         Dang, no new messages. Now go outside!
                         <button class="close-pop" @click="toggleMessages">
                           <svg width="30" height="30">
@@ -103,9 +103,9 @@
                   </transition>
 
                   <!-- games overlay -->
-                  <transition name="slide-fade">
+                  <transition name="bounce">
                     <div class="overlay" v-show="games">
-                      <div class="highscore games">
+                      <div class="popup games">
                         Why on Earth do you want to play games here?? Go outside!
                         <button class="close-pop" @click="toggleGames">
                           <svg width="30" height="30">
@@ -120,7 +120,7 @@
                   <!-- account overlay -->
                   <transition name="fade">
                     <div class="overlay" v-show="account">
-                      <div class="highscore account">
+                      <div class="popup account">
                         <div class="account__options">
                           <h2>Account Options</h2>
                           <ol>
@@ -137,9 +137,9 @@
                     </div>
                   </transition>
 
-                  <!-- account closed -->
+                  <!-- account closed overlay -->
                   <transition name="bounce">
-                    <div class="overlay__closed" v-show="closed">
+                    <div class="overlay closed" v-show="closed">
                       <div class="account__closed">
                         <h2>Thank you for closing your account!</h2>
                         <p>We appreciate your time.</p>

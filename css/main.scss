@@ -3,7 +3,7 @@
 @import "normalize";
 
 html {
-	background-color: $light;
+	background: $light;
 	color: $black;
 	scroll-behavior: smooth;
 	font: normal normal normal calc(14px + (26 - 14) * ((100vw - 320px) / (6000 - 320)))/1.5 "Fira Sans", "Helvetica", Verdana, sans-serif;
@@ -28,7 +28,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: "Lora", Georgia, serif;
+	font-family: "Lora", serif;
 	margin: {
 		top: 15px;
 		bottom: 15px;
@@ -54,7 +54,7 @@ img {
 }
 
 hr {
-	border-color: #9FA1A5;
+	border-color: $gray;
 	width: 95%;
 	margin: .15em auto;
 }
@@ -65,6 +65,10 @@ hr {
 	background: $light;
 	position: sticky;
 	top: 0;
+
+	ul {
+		list-style: none;
+	}
 }
 
 .nav__main {
@@ -91,7 +95,6 @@ hr {
 
 	ul {
 		display: flex;
-		list-style: none;
 		justify-content: space-evenly;
 		align-content: center;
 		width: 100%;
@@ -100,10 +103,6 @@ hr {
 
 .nav__secondary {
 	justify-self: end;
-
-	ul {
-		list-style: none;
-	}
 }
 
 .theGoodStuff {
@@ -120,7 +119,6 @@ hr {
 
 	#comment,
 	#name {
-		width: 90%;
 		margin: .5em 0;
 	}
 
@@ -131,7 +129,7 @@ hr {
 
 .user__comment {
 	border-radius: 1.5em;
-	background-color: #E8E8EF;
+	background: $grayLight;
 	padding: .5em 1em;
 }
 
@@ -144,6 +142,7 @@ hr {
 	place-items: start;
 	grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
 	gap: 1em;
+	padding: 5px;
 }
 
 .poster {
@@ -178,7 +177,7 @@ hr {
 
 .feed__item {
 	padding: .5em .5em 1.5em;
-	background-color: #BEC0C3;
+	background: $grayDark;
 	border-radius: 1em;
 	display: grid;
 	gap: 1em;
@@ -186,7 +185,7 @@ hr {
 }
 
 .feed__article {
-	background-color: rgba(222,224,225,.5);
+	background: rgba(222,224,225,.5);
 	box-shadow: 0 0 5px 5px rgba(159,161,165, 1);
 	border-radius: .5em;
 	padding: .5em;
@@ -204,7 +203,6 @@ hr {
 }
 
 .feed__article-image {
-	max-width: 600px;
 	margin: auto;
 }
 
@@ -216,7 +214,7 @@ hr {
 	button {
 		font: {
 			size: 82%;
-			family: "Fira Sans";
+			family: "Fira Sans", sans-serif;
 		}
 		padding: .75em 1em;
 		border-radius: .5em;
@@ -226,7 +224,7 @@ hr {
 }
 
 .error {
-	color: #7d002d;
+	color: $red;
 }
 
 .share {
@@ -240,6 +238,10 @@ hr {
 	a {
 		text-decoration: none;
 		color: $black;
+
+		&:hover {
+			color: $blue;
+		}
 	}
 }
 
@@ -251,11 +253,11 @@ hr {
 
 .counter {
 	color: $black;
-	background-color: $light;
+	background: $light;
 	padding: 2px 4px;
 	border-radius: 50%;
 	font-size: 80%;
-	font-family: "Lora";
+	font-family: "Lora", serif;
 }
 
 .overlay {
@@ -264,14 +266,12 @@ hr {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(50, 50, 50, .5);
+	background: rgba(50, 50, 50, .5);
 	display: grid;
 	place-items: center;
 }
 
-.highscore {
-	background-color: $red;
-	color: $light;
+.popup {
 	padding: 2em 1em;
 	border-radius: 1em;
 	text-align: center;
@@ -281,7 +281,7 @@ hr {
 	font-size: 150%;
 
 	button {
-		background-color: transparent;
+		background: transparent;
 		border: none;
 
 		> svg {
@@ -291,40 +291,29 @@ hr {
 	}
 }
 
-.info {
-	background-color: rgba(222, 224, 225, 1);
-	border: 2px solid $black;
-	padding: {
-		left: 1em;
-		right: 1em;
-		bottom: 1em;
-	}
-	margin-top: 1em;
-	border-radius: 1em;
-}
-
-.friends {
-	background-color: rgba(229, 149, 0, .5);
-	border: 2px solid $black;
-	padding: {
-		left: 10px;
-		right: 10px;
-	}
-	margin-top: 1em;
-	border-radius: 1em;
+.highscore {
+	background: $red;
+	color: $light;
 }
 
 .lowscore {
-	background-color: $blue;
+	background: $blue;
+	color: $light;
 }
 
 .messages {
-	background-color: $cobalt;
+	background: $cobalt;
+	color: $light;
 }
 
 .games {
-	background-color: $gold;
+	background: $gold;
 	color: $black;
+}
+
+.account {
+	background: $red;
+	color: $light;
 }
 
 .account__options {
@@ -352,16 +341,9 @@ hr {
 	}
 }
 
-.overlay__closed {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: $black;
+.closed {
+	background: $black;
 	color: $light;
-	display: grid;
-	place-items: center;
 }
 
 .account__closed {
@@ -370,13 +352,37 @@ hr {
 
 .openAccount {
 	border: none;
-	background-color: $light;
+	background: $light;
 	padding: 1em;
 	font: {
 		weight: bold;
-		family: "Lora";
+		family: "Lora", serif;
 	}
 	color: $black;
+
+	&:hover {
+		background: $cobalt;
+		color: $light;
+	}
+}
+
+.friends,
+.info {
+	border: 2px solid $black;
+	padding: {
+		left: 1em;
+		right: 1em;
+	}
+	margin-top: 1em;
+	border-radius: 1em;
+}
+
+.info {
+	background: rgba(222, 224, 225, 1);
+}
+
+.friends {
+	background: rgba(229, 149, 0, .5);
 }
 // vue transitions
 
@@ -402,6 +408,7 @@ hr {
 }
 /* Enter and leave animations can use different */
 /* durations and timing functions.              */
+
 .slide-fade-enter-active {
 	transition: all .3s ease;
 }
@@ -410,7 +417,6 @@ hr {
 	transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
 /* .slide-fade-leave-active below version 2.1.8 */
-
 .slide-fade-enter,
 .slide-fade-leave-to {
 	transform: translateX(10px);
@@ -422,12 +428,12 @@ hr {
 	transition: opacity .5s;
 }
 /* .fade-leave-active below version 2.1.8 */
-
 .fade-enter,
 .fade-leave-to {
 	opacity: 0;
 }
 // end vue transitions
+// Media Queries
 @media (min-width: 768px) {
 	.theGoodStuff__main {
 		display: grid;
@@ -450,25 +456,13 @@ hr {
 		flex-direction: row-reverse;
 		align-items: baseline;
 		justify-content: space-evenly;
-		width: 100%;
+		width: 99%;
 		padding: 0;
-	}
-
-	.theGoodStuff__main {
-		margin-left: 1.5em;
-	}
-
-	.friends__text,
-	.info__text {
-		padding: .5em .5em 1.5em;
 	}
 
 	.info {
 		max-width: 350px;
-	}
-
-	.info__text {
-		width: 80%;
+		margin-right: 1.5em;
 	}
 
 	.gallery {
