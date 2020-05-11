@@ -70,7 +70,7 @@ new Vue({
     },
     like(article) {
       article.likes += 1;
-      if (article.likes === 50) {
+      if (article.likes === 100) {
         article.highscore = true;
       };
     },
