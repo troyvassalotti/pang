@@ -408,7 +408,6 @@ hr {
 }
 /* Enter and leave animations can use different */
 /* durations and timing functions.              */
-
 .slide-fade-enter-active {
 	transition: all .3s ease;
 }
@@ -417,6 +416,7 @@ hr {
 	transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
 /* .slide-fade-leave-active below version 2.1.8 */
+
 .slide-fade-enter,
 .slide-fade-leave-to {
 	transform: translateX(10px);
@@ -428,6 +428,7 @@ hr {
 	transition: opacity .5s;
 }
 /* .fade-leave-active below version 2.1.8 */
+
 .fade-enter,
 .fade-leave-to {
 	opacity: 0;
@@ -463,15 +464,5 @@ hr {
 	.info {
 		max-width: 350px;
 		margin-right: 1.5em;
-	}
-
-	.gallery {
-		display: grid;
-		place-items: start;
-		grid: {
-			template-columns: 75%;
-			template-rows: auto;
-		}
-		gap: 1em;
 	}
 }
