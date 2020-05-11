@@ -406,8 +406,8 @@ hr {
 		transform: scale(1);
 	}
 }
-/* Enter and leave animations can use different */
-/* durations and timing functions.              */
+// Enter and leave animations can use different durations and timing functions.
+
 .slide-fade-enter-active {
 	transition: all .3s ease;
 }
@@ -415,7 +415,7 @@ hr {
 .slide-fade-leave-active {
 	transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
-/* .slide-fade-leave-active below version 2.1.8 */
+// .slide-fade-leave-active below version 2.1.8
 
 .slide-fade-enter,
 .slide-fade-leave-to {
@@ -427,7 +427,7 @@ hr {
 .fade-leave-active {
 	transition: opacity .5s;
 }
-/* .fade-leave-active below version 2.1.8 */
+// .fade-leave-active below version 2.1.8
 
 .fade-enter,
 .fade-leave-to {
