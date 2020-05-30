@@ -1,0 +1,19 @@
+{
+  "name": "Pang",
+  "version": "1.0.0",
+  "description": "A new type of social media",
+  "author": "Troy Vassalotti",
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "nuxt": "^2.12.2"
+  },
+  "devDependencies": {
+    "node-sass": "^4.14.1",
+    "sass-loader": "^8.0.2"
+  }
+}
