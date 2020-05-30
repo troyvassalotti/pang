@@ -52,9 +52,10 @@ import UserActions from '~/components/UserActions.vue';
 
 export default {
   components: {
-    [
-      Friends, Info, Overlay, UserActions
-    ]
+    Friends,
+    Info,
+    UserActions,
+    Overlay
   },
   head() {
     return {
@@ -62,7 +63,8 @@ export default {
       meta: [{
           name: 'description',
           content: 'Welcome to Pang: a new type of social media where it\'s just you and only you.'
-        } {
+        },
+        {
           name: 'twitter:title',
           content: 'Pang | A New Type of Social Media'
         },

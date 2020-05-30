@@ -15,7 +15,34 @@
 </template>
 
 <script>
-export default {};
+export default {
+  head() {
+    return {
+      title: 'Pang | A New Type of Social Media',
+      meta: [{
+          name: 'description',
+          content: 'Welcome to Pang: a new type of social media where it\'s just you and only you.'
+        },
+        {
+          name: 'twitter:title',
+          content: 'Pang | A New Type of Social Media'
+        },
+        {
+          name: 'twitter:description',
+          content: 'Welcome to Pang: a new type of social media where it\'s just you and only you.'
+        },
+        {
+          name: 'twitter:image',
+          content: '~/assets/img/pang.png'
+        },
+        {
+          name: 'twitter:card',
+          content: 'summary_large_image'
+        }
+      ]
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
