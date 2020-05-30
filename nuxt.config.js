@@ -28,8 +28,7 @@ export default {
       },
       {
         rel: 'stylesheet',
-        href: ''
-        // for font-awesome?
+        href: '~/assets/css/fonts/fontawesome/css/fontawesome-all.min.css'
       }
     ]
   },
@@ -41,7 +40,7 @@ export default {
 
   // Global CSS
   css: [
-    ''
+    '~/assets/css/compressed/main.min.css'
   ],
 
   // Plugins to load before mounting the App
