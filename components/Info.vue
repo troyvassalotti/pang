@@ -20,6 +20,8 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
+@import "~/assets/css/_globals";
+
 .info {
     border: 2px solid $black;
     padding: {

@@ -22,15 +22,10 @@ export default {
       }
     ],
     link: [{
-        rel: 'icon',
-        type: 'image/x-icon',
-        href: '/favicon.ico'
-      },
-      {
-        rel: 'stylesheet',
-        href: '~/assets/css/fonts/fontawesome/css/fontawesome-all.min.css'
-      }
-    ]
+      rel: 'icon',
+      type: 'image/x-icon',
+      href: '/favicon.ico'
+    }]
   },
 
   // Customize the progress bar color
@@ -40,14 +35,22 @@ export default {
 
   // Global CSS
   css: [
-    '~/assets/css/compressed/main.min.css'
+    '@/assets/css/compressed/main.min.css'
   ],
 
   // Plugins to load before mounting the App
   plugins: [],
 
   // Nuxt.js dev-modules
-  buildModules: [],
+  buildModules: [
+    '@nuxtjs/fontawesome'
+  ],
+  fontawesome: {
+    icons: {
+      solid: ['faGamepad'],
+      regular: ['faNewspaper', 'faComments', 'faUser']
+    }
+  },
 
   // Nuxt.js modules
   modules: [],

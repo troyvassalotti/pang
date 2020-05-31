@@ -30,6 +30,8 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
+@import "~/assets/css/_globals";
+
 .user__actions {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;

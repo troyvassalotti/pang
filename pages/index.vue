@@ -61,6 +61,7 @@ export default {
     return {
       title: 'Pang | A New Type of Social Media',
       meta: [{
+          hid: "description",
           name: 'description',
           content: 'Welcome to Pang: a new type of social media where it\'s just you and only you.'
         },
@@ -87,6 +88,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "~/assets/css/_globals";
+
 #app {
     width: 100%;
     display: grid;

@@ -9,25 +9,33 @@
     <nav class="nav__primary">
       <ul>
         <li>
-          <button class="non-button"><i class="far fa-newspaper fa-2x" title="Feed"></i></button>
+          <button class="non-button">
+            <font-awesome-icon :icon="['far', 'newspaper']" class="fa-2x" />
+          </button>
         </li>
-        <nuxt-link to="~/pages/games">
+        <nuxt-link to="/pages/games">
           <li>
-            <button class="non-button"><i class="fas fa-gamepad fa-2x" title="Games"></i></button>
+            <button class="non-button">
+              <font-awesome-icon :icon="['fas', 'gamepad']" class="fa-2x" />
+            </button>
           </li>
         </nuxt-link>
-        <nuxt-link to="~/pages/messages">
+        <nuxt-link to="/pages/messages">
           <li>
-            <button class="non-button"><i class="far fa-comments fa-2x" title="Messages"></i></button>
+            <button class="non-button">
+              <font-awesome-icon :icon="['far', 'comments']" class="fa-2x" />
+            </button>
           </li>
         </nuxt-link>
       </ul>
     </nav>
     <nav class="nav__secondary">
       <ul>
-        <nuxt-link to="~/pages/account">
+        <nuxt-link to="/pages/account">
           <li>
-            <button class="non-button"><i class="far fa-user fa-2x" title="Account"></i></button>
+            <button class="non-button">
+              <font-awesome-icon :icon="['far', 'user']" class="fa-2x" />
+            </button>
           </li>
         </nuxt-link>
       </ul>
@@ -41,6 +49,8 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
+@import "~/assets/css/_globals";
+
 #logo {
     justify-self: start;
 
