@@ -1,61 +1,56 @@
 <template>
-<div id="app">
-  <section class="theGoodStuff">
-    <div class="theGoodStuff__main">
-      <main class="feed">
-        <header>
-          <h1>Your Feed</h1>
-        </header>
-        <div class="feed__container">
-          <section class="feed__item" v-for="article in feed">
-            <header class="feed__header">
-              <div class="counter__container">
-                <p class="poster timestamp">{{article.author}}</p>
-                <p class="poster timestamp">Likes <span class="counter">{{article.likes}}</span> | Dislikes <span class="counter">{{article.dislikes}}</span></p>
-              </div>
+<section class="theGoodStuff">
+  <div class="theGoodStuff__main">
+    <main class="feed">
+      <header>
+        <h1>Your Feed</h1>
+      </header>
+      <div class="feed__container">
+        <section class="feed__item" v-for="article in feed">
+          <header class="feed__header">
+            <div class="counter__container">
+              <p class="poster timestamp">{{article.author}}</p>
+              <p class="poster timestamp">Likes <span class="counter">{{article.likes}}</span> | Dislikes <span class="counter">{{article.dislikes}}</span></p>
+            </div>
 
-              <!-- With all the conditional classes, etc -->
-              <Overlay />
+            <!-- With all the conditional classes, etc -->
+            <!-- <Overlay /> -->
 
-              <p class="poster__text">{{article.text}}</p>
-            </header>
-            <hr>
-            <article class="feed__article">
-              <img class="feed__article-image" :src="article.img" alt=''>
-              <h2>{{article.title}}</h2>
-              <p>{{article.description}}</p>
-            </article>
+            <p class="poster__text">{{article.text}}</p>
+          </header>
+          <hr>
+          <article class="feed__article">
+            <img class="feed__article-image" :src="article.img" alt=''>
+            <h2>{{article.title}}</h2>
+            <p>{{article.description}}</p>
+          </article>
 
-            <!-- User Actions -->
-            <UserActions />
+          <!-- User Actions -->
+          <!-- <UserActions /> -->
 
-          </section>
-        </div>
-      </main>
+        </section>
+      </div>
+    </main>
 
-      <!-- Friends -->
-      <Friends />
-    </div>
+    <!-- Friends -->
+    <Friends />
+  </div>
 
-    <!-- Info -->
-    <Info />
+  <!-- Info -->
+  <!-- <Info /> -->
 
-  </section>
-</div>
+</section>
 </template>
 
 <script>
 import Friends from '~/components/Friends.vue';
-import Info from '~/components/Info.vue';
-import Overlay from '~/components/Overlay.vue';
-import UserActions from '~/components/UserActions.vue';
+// import Info from '~/components/Info.vue';
+// import Overlay from '~/components/Overlay.vue';
+// import UserActions from '~/components/UserActions.vue';
 
 export default {
   components: {
-    Friends,
-    Info,
-    UserActions,
-    Overlay
+    Friends
   },
   head() {
     return {

@@ -13,14 +13,14 @@
             <font-awesome-icon :icon="['far', 'newspaper']" class="fa-2x" />
           </button>
         </li>
-        <nuxt-link to="/pages/games">
+        <nuxt-link to="/games/">
           <li>
             <button class="non-button">
               <font-awesome-icon :icon="['fas', 'gamepad']" class="fa-2x" />
             </button>
           </li>
         </nuxt-link>
-        <nuxt-link to="/pages/messages">
+        <nuxt-link to="/messages/">
           <li>
             <button class="non-button">
               <font-awesome-icon :icon="['far', 'comments']" class="fa-2x" />
@@ -31,7 +31,7 @@
     </nav>
     <nav class="nav__secondary">
       <ul>
-        <nuxt-link to="/pages/account">
+        <nuxt-link to="/account/">
           <li>
             <button class="non-button">
               <font-awesome-icon :icon="['far', 'user']" class="fa-2x" />

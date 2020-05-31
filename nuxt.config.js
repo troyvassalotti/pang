@@ -57,6 +57,7 @@ export default {
 
   // Build configuration
   build: {
+    publicPath: '/assets/' // change it from /_nuxt/
     // You can extend webpack config here
     // extend(config, ctx) {}
   }
