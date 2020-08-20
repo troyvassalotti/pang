@@ -25,33 +25,22 @@
             <p>{{article.description}}</p>
           </article>
 
-          <!-- User Actions -->
-          <!-- <UserActions /> -->
+          <UserActions />
 
         </section>
       </div>
     </main>
 
-    <!-- Friends -->
     <Friends />
   </div>
 
-  <!-- Info -->
-  <!-- <Info /> -->
+  <Info />
 
 </section>
 </template>
 
 <script>
-import Friends from '~/components/Friends.vue';
-// import Info from '~/components/Info.vue';
-// import Overlay from '~/components/Overlay.vue';
-// import UserActions from '~/components/UserActions.vue';
-
 export default {
-  components: {
-    Friends
-  },
   head() {
     return {
       title: 'Pang | A New Type of Social Media',

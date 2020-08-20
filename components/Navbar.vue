@@ -1,5 +1,3 @@
-<!-- 2. The newsfeed button should link to the homepage if it currently isn't the homepage. Otherwise, it should scroll up to the top if it is the homepage. -->
-
 <template>
 <header class="header">
   <div class="nav__main">
@@ -9,35 +7,37 @@
     <nav class="nav__primary">
       <ul>
         <li>
-          <button class="non-button">
-            <font-awesome-icon :icon="['far', 'newspaper']" class="fa-2x" />
-          </button>
+          <NuxtLink to="/">
+            <button class="non-button">
+              <font-awesome-icon :icon="['far', 'newspaper']" class="fa-2x" />
+            </button>
+          </NuxtLink>
         </li>
-        <nuxt-link to="/games/">
-          <li>
+        <li>
+          <NuxtLink to="/games/">
             <button class="non-button">
               <font-awesome-icon :icon="['fas', 'gamepad']" class="fa-2x" />
             </button>
-          </li>
-        </nuxt-link>
-        <nuxt-link to="/messages/">
-          <li>
+          </NuxtLink>
+        </li>
+        <li>
+          <NuxtLink to="/messages/">
             <button class="non-button">
               <font-awesome-icon :icon="['far', 'comments']" class="fa-2x" />
             </button>
-          </li>
-        </nuxt-link>
+          </NuxtLink>
+        </li>
       </ul>
     </nav>
     <nav class="nav__secondary">
       <ul>
-        <nuxt-link to="/account/">
-          <li>
+        <li>
+          <NuxtLink to="/account/">
             <button class="non-button">
               <font-awesome-icon :icon="['far', 'user']" class="fa-2x" />
             </button>
-          </li>
-        </nuxt-link>
+          </NuxtLink>
+        </li>
       </ul>
     </nav>
   </div>

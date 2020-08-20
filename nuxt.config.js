@@ -1,8 +1,8 @@
 const pkg = require('./package');
 
 export default {
+  components: true,
   mode: 'universal',
-
   generate: {},
 
   // Headers of the page
