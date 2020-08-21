@@ -12,7 +12,3 @@
   </div>
 </aside>
 </template>
-
-<style lang="scss" scoped>
-// @import "~/assets/css/_globals";
-</style>
