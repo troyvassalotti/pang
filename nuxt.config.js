@@ -2,7 +2,7 @@ const pkg = require('./package');
 
 export default {
   components: true,
-  mode: 'universal',
+  target: 'static',
   generate: {},
 
   // Headers of the page
@@ -19,6 +19,22 @@ export default {
         hid: 'description',
         name: 'description',
         content: ''
+      },
+      {
+        name: 'twitter:title',
+        content: 'Pang | A New Type of Social Media'
+      },
+      {
+        name: 'twitter:description',
+        content: 'Welcome to Pang: a new type of social media where it\'s just you and only you.'
+      },
+      {
+        name: 'twitter:image',
+        content: '~/assets/img/pang.png'
+      },
+      {
+        name: 'twitter:card',
+        content: 'summary_large_image'
       }
     ],
     link: [{
@@ -35,7 +51,7 @@ export default {
 
   // Global CSS
   css: [
-    '@/assets/css/compressed/main.min.css'
+    '~/assets/css/main.scss'
   ],
 
   // Plugins to load before mounting the App
