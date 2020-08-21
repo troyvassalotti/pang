@@ -1,7 +1,6 @@
 <template>
-<Navbar />
-<Nuxt />
-<UserActions />
-<Friends />
-<Info />
+<div id="app">
+  <Navbar />
+  <Nuxt />
+</div>
 </template>
