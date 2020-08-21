@@ -3,6 +3,9 @@
 export default {
   target: "static",
   components: true,
+  generate: {
+    fallback: "404.html"
+  },
 
   // Headers of the page
   head: {
