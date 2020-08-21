@@ -49,18 +49,6 @@ export default {
     "~/assets/css/main.scss"
   ],
 
-  // Nuxt.js dev-modules
-  buildModules: [
-    "@nuxtjs/fontawesome"
-  ],
-  fontawesome: {
-    icons: {
-      solid: ["faGamepad"],
-      regular: ["faNewspaper", "faComments", "faUser"],
-      brands: ["faTwitter"]
-    }
-  },
-
   // Customize the progress bar color
   loading: false
 }

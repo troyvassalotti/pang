@@ -10,10 +10,6 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@fortawesome/free-brands-svg-icons": "^5.13.0",
-    "@fortawesome/free-regular-svg-icons": "^5.13.0",
-    "@fortawesome/free-solid-svg-icons": "^5.13.0",
-    "@nuxtjs/fontawesome": "^1.1.2",
     "nuxt": "^2.14.3"
   },
   "devDependencies": {

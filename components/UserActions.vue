@@ -6,9 +6,7 @@
   <button>Share</button>
 </div>
 <p>
-  <a href="#" target="_blank" rel="noopener">
-    <font-awesome-icon :icon="['fab', 'twitter']" class="fa-2x" /> Tweet this Bad Boy
-  </a>
+  <a href="#" target="_blank" rel="noopener">Tweet this Bad Boy</a>
 </p>
 <form>
   <label for="name">Your Name (for fun):</label>
@@ -19,10 +17,10 @@
 </form>
 <p>Oops! Please put a name and comment.</p>
 <article>
-  <p>comment.name</p>
-  <p>comment.comment</p>
+  <p>name</p>
+  <p>comment</p>
   <footer>
-    <p>comment.time</p>
+    <p>time</p>
   </footer>
 </article>
 </template>
