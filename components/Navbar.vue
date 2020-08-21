@@ -4,28 +4,16 @@
   <nav>
     <ul>
       <li>
-        <NuxtLink to="/">
-          <font-awesome-icon :icon="['far', 'newspaper']" class="fa-2x" />
-        </NuxtLink>
+        <NuxtLink to="/">Feed</NuxtLink>
       </li>
       <li>
-        <NuxtLink to="/games/">
-          <font-awesome-icon :icon="['fas', 'gamepad']" class="fa-2x" />
-        </NuxtLink>
+        <NuxtLink to="/games/">Games</NuxtLink>
       </li>
       <li>
-        <NuxtLink to="/messages/">
-          <font-awesome-icon :icon="['far', 'comments']" class="fa-2x" />
-        </NuxtLink>
+        <NuxtLink to="/messages/">Messages</NuxtLink>
       </li>
-    </ul>
-  </nav>
-  <nav>
-    <ul>
       <li>
-        <NuxtLink to="/account/">
-          <font-awesome-icon :icon="['far', 'user']" class="fa-2x" />
-        </NuxtLink>
+        <NuxtLink to="/account/">Account</NuxtLink>
       </li>
     </ul>
   </nav>

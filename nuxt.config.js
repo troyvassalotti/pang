@@ -1,5 +1,3 @@
-// const pkg = require('./package');
-
 export default {
   target: "static",
   components: true,

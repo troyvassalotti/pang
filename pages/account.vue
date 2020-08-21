@@ -1,5 +1,3 @@
 <template>
-<div class="">
-
-</div>
+<h1>Account</h1>
 </template>

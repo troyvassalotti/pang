@@ -1,5 +1,3 @@
 <template>
-<div class="">
-
-</div>
+<h1>Messages</h1>
 </template>
