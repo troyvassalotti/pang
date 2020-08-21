@@ -1,20 +1,35 @@
 @import "_globals";
-@import "_fonts";
-@import "normalize";
+@import "fonts";
+@import "sanitize";
+
+:root {
+	/* you've probably got some variable you like, right? */
+	--gap: 1em;
+}
 
 html {
-	background: $light;
-	color: $black;
-	scroll-behavior: smooth;
-	font: normal normal normal calc(14px + (26 - 14) * ((100vw - 320px) / (6000 - 320)))/1.5 "Fira Sans", "Helvetica", Verdana, sans-serif;
+	min-height: 100vh;
 }
 
 body {
-	display: grid;
-	place-items: center;
 	min-height: 100vh;
-	max-width: 100vw;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
 }
+
+img {
+	display: block;
+	max-width: 100%;
+	margin: auto;
+	height: auto;
+}
+/* Be super sure the height is set to auto for aspect ratios and such using HTML size attributes */
+
+img[height] {
+	height: auto;
+}
+/* Never really liked margins on my headings */
 
 h1,
 h2,
@@ -22,50 +37,79 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: "Lora", serif;
-	margin: {
-		top: 15px;
-		bottom: 15px;
-	}
+	margin: 0;
+}
+/* Use this class instead to put margins on my headings */
+
+.headline {
+	margin-bottom: 1em;
 }
 
-img {
-	width: 100%;
-	max-width: 100%;
-	display: block;
-
-	&[height] {
-		height: auto;
-	}
-}
-
-hr {
-	border-color: $gray;
+.wrapper {
 	width: 95%;
-	margin: .15em auto;
+	max-width: 1600px;
 }
 
-.poster {
-	margin: {
-		top: .5em;
-		bottom: .5em;
-	}
+.wrapper[data-constrain="more"] {
+	max-width: 1100px !important;
 }
 
-.poster__text {
-	margin: {
-		top: 0;
-		bottom: 0;
-	}
+.wrapper[data-constrain="most"] {
+	max-width: 600px !important;
 }
 
-.non-button {
-	border: none;
-	padding: 0;
-	background: transparent;
-	color: $black;
+.flex {
+	display: flex;
+}
 
-	&:hover {
-		color: $gold;
-	}
+.col {
+	flex-direction: column;
+}
+/* I hear you asking "but what if something needs to be row-reverse?" and well, I haven't had that happen yet so we'll cross that bridge when we get there */
+
+*[data-state="reversed"] {
+	flex-direction: column-reverse !important;
+}
+
+.full {
+	width: 100%;
+}
+
+.grid {
+	display: grid;
+	gap: var(--gap);
+}
+
+.two-col {
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.three-col {
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.place-center {
+	place-items: center;
+}
+
+.flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.wrap {
+	flex-wrap: wrap;
+}
+
+.center {
+	text-align: center;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.bold {
+	font-weight: 700;
 }

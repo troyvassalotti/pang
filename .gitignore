@@ -15,5 +15,3 @@ jspm_packages/
 
 # Nuxt generate
 dist
-
-/secret
