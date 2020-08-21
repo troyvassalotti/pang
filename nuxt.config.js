@@ -73,8 +73,16 @@ export default {
 
   // Build configuration
   build: {
-    publicPath: '/assets/' // change it from /_nuxt/
-    // You can extend webpack config here
-    // extend(config, ctx) {}
+    // html.minify: {
+    //   collapseBooleanAttributes: true,
+    //   decodeEntities: true,
+    //   minifyCSS: true,
+    //   minifyJS: true,
+    //   processConditionalComments: true,
+    //   removeEmptyAttributes: true,
+    //   removeRedundantAttributes: true,
+    //   trimCustomFragments: true,
+    //   useShortDoctype: true
+    // }
   }
 }
