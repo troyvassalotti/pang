@@ -1,5 +1,5 @@
 <template>
-<div>
+<section>
   <div>
     <button>Like</button>
     <button>Dislike</button>
@@ -24,5 +24,5 @@
       <p>time</p>
     </footer>
   </article>
-</div>
+</section>
 </template>

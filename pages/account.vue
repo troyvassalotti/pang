@@ -1,3 +1,5 @@
 <template>
-<h1>Account</h1>
+<main>
+  <h1>Account</h1>
+</main>
 </template>

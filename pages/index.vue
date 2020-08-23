@@ -1,8 +1,10 @@
 <template>
-<main>
-  <h1>Your Feed</h1>
-  <UserActions />
+<div>
+  <main>
+    <h1>Your Feed</h1>
+    <UserActions />
+  </main>
   <Friends />
   <Info />
-</main>
+</div>
 </template>
