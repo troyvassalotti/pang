@@ -9,7 +9,7 @@
 
 html {
 	min-height: 100vh;
-	background: $alice-blue;
+	background: whitesmoke;
 	color: $rich-black-fogra-29;
 	font-family: $lora;
 	overflow-y: scroll; // add scrollbar on all pages so nothing shifts around
@@ -57,8 +57,7 @@ a {
 	color: $star-command-blue;
 	text-decoration: none;
 
-	&:hover,
-	&:visited {
+	&:hover {
 		text-decoration: underline;
 	}
 

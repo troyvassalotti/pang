@@ -41,6 +41,12 @@ export default {
       rel: "icon",
       type: "image/x-icon",
       href: "/favicon.ico"
+    }, {
+      rel: "preconnect",
+      href: "https://d33wubrfki0l68.cloudfront.net"
+    }, {
+      rel: "dns-prefetch",
+      href: "https://d33wubrfki0l68.cloudfront.net"
     }]
   },
 
