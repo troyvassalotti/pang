@@ -22,12 +22,12 @@ body {
 	flex-direction: column;
 }
 
-#__nuxt {
-	height: 100%;
-}
-
-#__layout {
-	height: 100%;
+#__layout,
+#__nuxt,
+#app {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
 }
 
 img {
@@ -74,6 +74,7 @@ a {
 .wrapper {
 	width: 95%;
 	max-width: 1600px;
+	margin: auto;
 }
 
 .wrapper[data-constrain="more"] {
@@ -138,4 +139,11 @@ a {
 
 .bold {
 	font-weight: 700;
+}
+
+.page {
+	text-align: center;
+	padding: 3rem 0;
+	border-radius: 1rem;
+	box-shadow: 0 15px 35px 5px $rich-black-fogra-29;
 }

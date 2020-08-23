@@ -1,7 +1,7 @@
 <template>
 <footer>
   <hr>
-  <div class="wrapper" style="margin: auto; padding: 10px 0; text-align: center;">
+  <div class="wrapper" style="padding: 10px 0; text-align: center;">
     <h2>Pang: a New Type of Social Media</h2>
     <p>Thanks for using Pang; I hope you enjoyed your time here. Now, look at what you could be experiencing if you logged off right now.</p>
     <div class="flex wrap activities">
@@ -18,7 +18,9 @@
 <style lang="scss" scoped>
 @import "~assets/css/_globals";
 footer {
-    // background-color: $alice-blue;
+    margin: {
+        top: auto;
+    }
 }
 .activities {
     gap: 5px;

@@ -1,0 +1,46 @@
+export const feed = [{
+    author: "The Onion",
+    text: '“We want users to see accurate information on our platform, so we’re flagging disreputable sites like Facebook that often traffic in political propaganda for financial incentive.”',
+    img: "feed1",
+    title: "Facebook Cracking Down On Misinformation By Warning Users Who Share Links From Facebook",
+    description: "MENLO PARK, CA—In an effort to slow the proliferation of fake news, tech giant Facebook announced plans Wednesday to crack down on misinformation by warning users who share links from Facebook.",
+    likes: 0,
+    dislikes: 0,
+    comment: false,
+    share: false,
+    error: false,
+    newName: '',
+    newComment: '',
+    comments: []
+  },
+  {
+    author: "Susan, Your Crazy Cousin",
+    text: "Can you all smell the FAKE NEWS on this one?? I can!! Very bad!",
+    img: "feed2",
+    title: "People All Around The World Are Doing Stuff!",
+    description: "To everyone's surprise, lots of stuff is happening. In this economy? Yes, even in this economy.",
+    likes: 0,
+    dislikes: 0,
+    comment: false,
+    share: false,
+    error: false,
+    newName: '',
+    newComment: '',
+    comments: []
+  },
+  {
+    author: "Former Classmate",
+    text: "Beautiful! This man is a work of art!!",
+    img: "feed3",
+    title: "DJ Khaled Said Something You Won't Believe",
+    description: "To be successful you’ve got to work hard, to make history, simple, you’ve got to make it. Learning is cool, but knowing is better, and I know the key to success. A major key, never panic. Don’t panic, when it gets crazy and rough, don’t panic, stay calm. I’m up to something. Wraith talk. Fan luv. Fan luv. You smart, you loyal, you a genius.",
+    likes: 0,
+    dislikes: 0,
+    comment: false,
+    share: false,
+    error: false,
+    newName: '',
+    newComment: '',
+    comments: []
+  }
+];
