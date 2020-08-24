@@ -55,6 +55,10 @@ export default {
     "~/assets/css/main.scss"
   ],
 
+  modules: [
+    "@nuxtjs/axios",
+  ],
+
   // Customize the progress bar color
   loading: false
 }

@@ -4,21 +4,10 @@
     <section class="wrapper container">
       <h1>Your Feed</h1>
       <div class="feed">
-        <section class="feed__item" v-for="article in feed">
-          <header class="feed__header">
-            <div class="counters">
-              <p class="author small">{{article.author}}</p>
-              <p class="author small">Likes <span class="counter">{{article.likes}}</span> | Dislikes <span class="counter">{{article.dislikes}}</span></p>
-            </div>
-            <p class="author__text">{{article.text}}</p>
-          </header>
-          <hr>
-          <article class="feed__article">
-            <img :src="require(`~/assets/img/${article.img}.jpg`)" alt="" class="feed__image">
-            <h2>{{article.title}}</h2>
-            <p>{{article.description}}</p>
-          </article>
-        </section>
+        <article class="post" v-for="post in posts">
+          <h2>{{post.title}}</h2>
+          <p>{{post.body}}</p>
+        </article>
       </div>
       <UserActions />
     </section>
@@ -26,6 +15,19 @@
   </main>
 </div>
 </template>
+
+<script>
+export default {
+  async asyncData({
+    $axios
+  }) {
+    let posts = await $axios.$get("https://jsonplaceholder.typicode.com/posts?userId=6");
+    return {
+      posts
+    };
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 .container {
