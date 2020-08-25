@@ -59,6 +59,11 @@ export default {
     "@nuxtjs/axios",
   ],
 
+  // Configure the axios module
+  axios: {
+    baseURL: "https://jsonplaceholder.typicode.com"
+  },
+
   // Customize the progress bar color
   loading: false
 }

@@ -2,6 +2,6 @@
 <div id="app">
   <Navbar />
   <Nuxt />
-  <Info />
+  <LazyInfo />
 </div>
 </template>

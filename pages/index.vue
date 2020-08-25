@@ -21,10 +21,18 @@ export default {
   async asyncData({
     $axios
   }) {
-    let posts = await $axios.$get("https://jsonplaceholder.typicode.com/posts?userId=6");
+    let posts = await $axios.$get("posts?userId=6");
     return {
       posts
     };
+  },
+  methods: {
+    higherScore(state) {
+      this.$store.commit("higherScore")
+    },
+    lowerScore(state) {
+      this.$store.commit("lowerScore")
+    }
   }
 }
 </script>
