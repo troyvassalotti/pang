@@ -17,13 +17,16 @@
 </template>
 
 <script>
+// to use the store, it's this.$store.state.posts.whatever
 export default {
   async asyncData({
     $axios
   }) {
     let posts = await $axios.$get("posts?userId=6");
+    let photos = await $axios.$get("albums/1/photos");
     return {
-      posts
+      posts: posts,
+      photos: photos
     };
   },
   methods: {
