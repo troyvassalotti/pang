@@ -1,13 +1,8 @@
 <template>
 <div class="feed flex col">
-  <article class="grid post" v-for="post in posts" :key="post.id">
-    <header class="post__message">
-      <div class="flex post__details">
-        <FakeTwitterUser :username="users[post.id - 1]" />
-      </div>
-    </header>
-    <section>
-      <h2>{{ post.title }}</h2>
+  <article class="post" v-for="post in posts" :key="post.id">
+    <section class="post__message">
+      <FakeTwitterUser :username="post.email" />
       <p>{{ post.body }}</p>
     </section>
     <section class="comments">
@@ -16,7 +11,7 @@
       </div>
     </section>
   </article>
-  <article class="grid post" v-show="this.posts.length === 0">
+  <article class="post" v-show="this.posts.length === 0">
     <section>
       <h2>No More Posts</h2>
       <p>Good job! You've deleted your Twitter feed.</p>
@@ -29,22 +24,17 @@
 export default {
   data() {
     return {
-      posts: [],
-      users: ["Leanne Graham", "Ervin Howell", "Clementine Bauch", "Patricia Lebsack", "Chelsey Dietrich", "Mrs. Dennis Schulist", "Kurtis Weissnat", "Nicholas Runolfsdottir V", "Glenna Reichert", "Clementina DuBuque"]
+      posts: []
     }
   },
   async fetch() {
-    this.posts = await fetch("https://jsonplaceholder.typicode.com/posts?userId=1")
+    const postSetOne = await fetch("https://jsonplaceholder.typicode.com/comments?postId=5")
       .then(res => res.json());
-    this.deleted = false;
+    this.posts = await fetch("https://jsonplaceholder.typicode.com/comments?postId=8")
+      .then(res => res.json())
+      .then(data => data.concat(postSetOne));
   },
   methods: {
-    deleteComment(comment) {
-      let index = this.comments.indexOf(comment);
-      if (index > -1) {
-        this.comments.splice(index, 1);
-      }
-    },
     deletePost(post) {
       let index = this.posts.indexOf(post);
       if (index > -1) {
@@ -69,12 +59,6 @@ export default {
 }
 
 .post__details {
-    justify-content: space-between;
-
-    p {
-        font-size: 85%;
-    }
-
     span {
         color: $rich-black-fogra-29;
         background: $eggshell;

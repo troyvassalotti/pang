@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  layout: "the-abyss"
+  layout: "abyss"
 }
 </script>
 

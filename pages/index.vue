@@ -13,7 +13,7 @@
             <p>{{ post.body }}</p>
           </header>
           <div class="post__content">
-            <img :src="post.img" :alt="post.title" />
+            <img :src="require(`~/assets/img/${post.img}.jpg`)" :alt="post.title" />
             <h2>{{ post.title }}</h2>
             <p>{{ post.description }}</p>
           </div>
@@ -38,12 +38,13 @@
               <p class="error" v-show="post.error">
                 Oops! Please write a name (any name) and a comment.</p>
             </div>
+            <h3 v-show="post.comments.length > 0 || post.api && comments.length > 0">Comments</h3>
             <article class="comment" v-for="comment in comments" v-show="post.api">
-              <p class="small-text">{{ comment.email }}</p>
+              <p class="small-text"><b>{{ comment.email }}</b></p>
               <p>{{ comment.name }}</p>
             </article>
             <article class="comment" v-for="comment in post.comments">
-              <p class="small-text">{{ comment.name }}</p>
+              <p class="small-text"><b>{{ comment.name }}</b></p>
               <p>{{ comment.message }}</p>
               <p class="small-text">{{ comment.time }}</p>
             </article>
@@ -73,7 +74,7 @@ export default {
       pang: [{
           author: "The Onion",
           body: '“We want users to see accurate information on our platform, so we’re flagging disreputable sites like Facebook that often traffic in political propaganda for financial incentive.”',
-          img: "https://i.kinja-img.com/gawker-media/image/upload/c_scale,f_auto,fl_progressive,q_80,w_1600/bm6u5slrzwlkoknftrty.jpg",
+          img: "feed1",
           title: "Facebook Cracking Down On Misinformation By Warning Users Who Share Links From Facebook",
           description: "MENLO PARK, CA—In an effort to slow the proliferation of fake news, tech giant Facebook announced plans Wednesday to crack down on misinformation by warning users who share links from Facebook.",
           likes: 0,
@@ -88,7 +89,7 @@ export default {
         {
           author: "Susan, Your Crazy Cousin",
           body: "Can you all smell the FAKE NEWS on this one?? I can!! Very bad!",
-          img: "https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ",
+          img: "feed2",
           title: "People All Around The World Are Doing Stuff!",
           description: "To everyone's surprise, lots of stuff is happening. In this economy? Yes, even in this economy.",
           likes: 0,
@@ -104,7 +105,7 @@ export default {
         {
           author: "Former Classmate",
           body: "Beautiful! This man is a work of art!!",
-          img: "https://images.unsplash.com/photo-1572609141402-a5538142051f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ",
+          img: "feed3",
           title: "DJ Khaled Said Something You Won't Believe",
           description: "To be successful you’ve got to work hard, to make history, simple, you’ve got to make it. Learning is cool, but knowing is better, and I know the key to success. A major key, never panic. Don’t panic, when it gets crazy and rough, don’t panic, stay calm. I’m up to something. Wraith talk. Fan luv. Fan luv. You smart, you loyal, you a genius.",
           likes: 0,
