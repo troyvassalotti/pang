@@ -3,7 +3,7 @@
   <section class="wrapper" data-constrain="most">
     <h1>Your Feed</h1>
     <div class="feed flex col">
-      <article class="grid post" v-for="post in pang" key="post.id">
+      <article class="grid post" v-for="post in pang" :key="pang.indexOf(post)">
         <header class="post__message">
           <div class="flex post__details">
             <p>{{ post.author }}</p>
@@ -17,29 +17,30 @@
           <p>{{ post.description }}</p>
         </div>
         <section class="comments">
-          <div class="actions">
+          <div class="actions" data-buttons="4">
             <button @click="like(post)">Like</button>
             <button @click="dislike(post)">Dislike</button>
             <button @click="showComment(post)">Comment</button>
             <button @click="share(post)">Share</button>
           </div>
           <p class="share">
-            <a :href="tweet" target="_blank" rel="noopener">Tweet This Bad Boy</a>
+            <a :href="tweet" target="_blank" rel="noopener" v-show="post.share">Tweet This Bad Boy</a>
           </p>
-          <div v-show="comment">
-            <form>
+          <div v-show="post.comment">
+            <form @submit.prevent>
               <label for="name">Your name:</label>
-              <input id="name" type="text" maxlength="100">
+              <input id="name" type="text" maxlength="100" v-model="post.newName" @keypress.enter="postComment(post)">
               <label for="comment">Write your comment below:</label>
-              <textarea id="comment" maxlength="300"></textarea>
-              <button type="submit">Post Comment</button>
+              <textarea id="comment" maxlength="300" v-model="post.newMessage" @keypress.enter="postComment(post)"></textarea>
+              <button type="submit" @click="postComment(post)">Post Comment</button>
             </form>
-            <p class="error" v-show="error">Oops! Please write a name (any name) and a comment.</p>
+            <p class="error" v-show="post.error">
+              Oops! Please write a name (any name) and a comment.</p>
           </div>
-          <article class="comment">
-            <p class="small-text">New Name</p>
-            <p>New Comment</p>
-            <p class="small-text">New Time</p>
+          <article class="comment" v-for="comment in post.comments">
+            <p class="small-text">{{ comment.name }}</p>
+            <p>{{ comment.message }}</p>
+            <p class="small-text">{{ comment.time }}</p>
           </article>
         </section>
       </article>
@@ -47,6 +48,10 @@
     </div>
   </section>
   <Friends />
+  <Overlay :scoreType="'lowscore'" :scoreMessage="`Wow... you really don't like my app? I'm sorry 😢`" v-show="lowscore === 25" />
+  <Overlay :scoreType="'highscore'" :scoreMessage="`You just reached the high score! Keep Going!`" v-show="highscore === 50" />
+  <Overlay :scoreType="'higherscore'" :scoreMessage="`Oh, okay! Haha, you're having fun! Awesome... Stop.`" v-show="highscore === 250" />
+  <Overlay :scoreType="'highestscore'" :scoreMessage="`Please stop. I didn't code any more surprises. I'm serious.`" v-show="highscore === 500" />
 </main>
 </template>
 
@@ -108,9 +113,9 @@ export default {
   async asyncData({
     $axios
   }) {
-    const photos = await $axios.$get("photos?albumId=1");
+    const comments = await $axios.$get("comments?postId=1");
     return {
-      photos: photos,
+      comments: comments,
     }
   },
   methods: {
@@ -136,7 +141,7 @@ export default {
         };
         post.comments.push({
           name: post.newName,
-          comment: post.newMessage,
+          message: post.newMessage,
           time: `${hours}:${minutes} ${amp}`
         });
         post.newName = '';
@@ -150,9 +155,11 @@ export default {
     },
     like(post) {
       post.likes += 1;
+      this.highscore += 1;
     },
     dislike(post) {
       post.dislikes += 1;
+      this.lowscore += 1;
     }
   }
 }

@@ -11,13 +11,9 @@
       <p>{{ post.body }}</p>
     </section>
     <section class="comments">
-      <article class="comment" v-for="comment in comments">
-        <p class="small-text">{{ comment.email }}</p>
-        <p>{{ comment.body }}</p>
-        <div class="actions">
-          <button>Delete Comment</button>
-        </div>
-      </article>
+      <div class="actions" data-buttons="1">
+        <button @click="deletePost(post)">Delete This Post</button>
+      </div>
     </section>
   </article>
 </div>
@@ -27,20 +23,27 @@
 export default {
   data() {
     return {
-      // error: false,
       posts: [],
-      users: ["Leanne Graham", "Ervin Howell", "Clementine Bauch", "Patricia Lebsack", "Chelsey Dietrich", "Mrs. Dennis Schulist", "Kurtis Weissnat", "Nicholas Runolfsdottir V", "Glenna Reichert", "Clementina DuBuque"],
-      comments: []
+      users: ["Leanne Graham", "Ervin Howell", "Clementine Bauch", "Patricia Lebsack", "Chelsey Dietrich", "Mrs. Dennis Schulist", "Kurtis Weissnat", "Nicholas Runolfsdottir V", "Glenna Reichert", "Clementina DuBuque"]
     }
   },
   async fetch() {
     this.posts = await fetch("https://jsonplaceholder.typicode.com/posts?userId=1")
       .then(res => res.json());
-    this.comments = await fetch("https://jsonplaceholder.typicode.com/comments?postId=1")
-      .then(res => res.json());
   },
   methods: {
-    deleteComment() {}
+    deleteComment(comment) {
+      let index = this.comments.indexOf(comment);
+      if (index > -1) {
+        this.comments.splice(index, 1);
+      }
+    },
+    deletePost(post) {
+      let index = this.posts.indexOf(post);
+      if (index > -1) {
+        this.posts.splice(index, 1);
+      }
+    }
   }
 }
 </script>
