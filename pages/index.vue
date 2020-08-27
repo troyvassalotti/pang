@@ -168,7 +168,6 @@ export default {
 <style lang="scss" scoped>
 @import "~assets/css/_globals.scss";
 main {
-    // --gap: 2rem;
     display: flex;
     flex-direction: column;
     gap: var(--gap);
