@@ -167,11 +167,18 @@ export default {
 
 <style lang="scss" scoped>
 @import "~assets/css/_globals.scss";
+main {
+    // --gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
 
 @media only screen and (min-width: 968px) {
     main {
         display: grid;
         grid-template-columns: 2fr 1fr;
+        --gap: revert;
     }
 }
 </style>

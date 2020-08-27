@@ -6,7 +6,7 @@
     <p>If you would like to reopen your account, you can click the button below...</p>
     <p>But only if you <em>really, really</em> have to.</p>
     <p>
-      <NuxtLink to="/" id="openAccount">Open Account</NuxtLink>
+      <NuxtLink to="/" id="openAccount">Start Fresh</NuxtLink>
     </p>
   </div>
 </main>

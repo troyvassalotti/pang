@@ -15,3 +15,18 @@
   </div>
 </aside>
 </template>
+
+<style lang="scss" scoped>
+@import "assets/css/_globals.scss";
+aside {
+    height: min-content;
+    max-width: 400px;
+}
+
+.wrapper {
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    background: $rich-black-fogra-29;
+    color: $eggshell;
+}
+</style>
