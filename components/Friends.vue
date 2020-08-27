@@ -1,6 +1,6 @@
 <template>
 <aside>
-  <div class="wrapper friends">
+  <div class="wrapper" data-constrain="most">
     <h2>You Have No Friends 😢</h2>
     <p>Bummer! Maybe try one of these instead?</p>
     <ul>
@@ -15,9 +15,3 @@
   </div>
 </aside>
 </template>
-
-<style lang="scss" scoped>
-.friends {
-    margin: auto;
-}
-</style>

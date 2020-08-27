@@ -9,10 +9,10 @@
 
 html {
 	min-height: 100vh;
-	background: whitesmoke;
+	background: $alice-blue;
 	color: $rich-black-fogra-29;
 	font-family: $lora;
-	overflow-y: scroll; // add scrollbar on all pages so nothing shifts around
+	overflow-x: hidden;
 }
 
 body {
@@ -30,6 +30,10 @@ body {
 	flex-direction: column;
 }
 
+#app {
+	gap: var(--gap);
+}
+
 img {
 	display: block;
 	max-width: 100%;
@@ -37,12 +41,10 @@ img {
 	height: auto;
 }
 /* Be super sure the height is set to auto for aspect ratios and such using HTML size attributes */
-
 img[height] {
 	height: auto;
 }
 /* Never really liked margins on my headings */
-
 h1,
 h2,
 h3,
@@ -66,7 +68,6 @@ a {
 	}
 }
 /* Use this class instead to put margins on my headings */
-
 .headline {
 	margin-bottom: 1em;
 }
@@ -93,7 +94,6 @@ a {
 	flex-direction: column;
 }
 /* I hear you asking "but what if something needs to be row-reverse?" and well, I haven't had that happen yet so we'll cross that bridge when we get there */
-
 *[data-state="reversed"] {
 	flex-direction: column-reverse !important;
 }
@@ -146,4 +146,100 @@ a {
 	padding: 3rem 0;
 	border-radius: 1rem;
 	box-shadow: 0 15px 35px 5px $rich-black-fogra-29;
+	background: white;
+}
+
+.comment {
+	border-top: 1px solid $rich-black-fogra-29;
+}
+
+.small-text {
+	font-size: 85%;
+}
+
+.feed {
+	gap: var(--gap);
+}
+
+.post {
+	max-width: 600px;
+	padding: .5rem 1rem;
+	background-color: white;
+	border-radius: 1rem;
+}
+
+.post__details {
+	justify-content: space-between;
+
+	p {
+		margin-bottom: 0;
+		font-size: 85%;
+	}
+
+	span {
+		color: $rich-black-fogra-29;
+		background: $eggshell;
+		padding: 2px 4px;
+		border-radius: 50%;
+		font: {
+			size: 80%;
+		}
+	}
+}
+
+.post__content {
+	border-radius: .5em;
+	background: $alice-blue;
+	box-shadow: 0 0 5px 5px $rich-black-fogra-29;
+	padding: .5em;
+}
+
+.actions {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: .5rem;
+
+	button {
+		padding: .75em 1em;
+		border-radius: .5em;
+		background: $french-bistre;
+		color: white;
+		font: {
+			size: 80%;
+			family: $fira;
+		}
+	}
+}
+
+.share {
+	text-align: center;
+	margin: 0;
+}
+
+.comments {
+	display: flex;
+	flex-direction: column;
+	gap: var(--gap);
+
+	form {
+		display: flex;
+		flex-direction: column;
+
+		button[type="submit"] {
+			width: max-content;
+		}
+
+		#comment,
+		#name {
+			margin: .5em 0;
+		}
+
+		#comment {
+			resize: none;
+		}
+	}
+}
+
+.error {
+	color: red;
 }
