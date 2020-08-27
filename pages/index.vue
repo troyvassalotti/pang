@@ -1,58 +1,69 @@
 <template>
-<main>
-  <section class="wrapper" data-constrain="most">
-    <h1>Your Feed</h1>
-    <div class="feed flex col">
-      <article class="grid post" v-for="post in pang" :key="pang.indexOf(post)">
-        <header class="post__message">
-          <div class="flex post__details">
-            <p>{{ post.author }}</p>
-            <p>Likes <span>{{ post.likes }}</span> | Dislikes <span>{{ post.dislikes }}</span></p>
+<div class="home">
+  <main>
+    <section class="wrapper" data-constrain="most" id="feed">
+      <h1>Your Feed</h1>
+      <div class="feed flex col">
+        <article class="grid post" v-for="post in pang" :key="pang.indexOf(post)">
+          <header class="post__message">
+            <div class="flex post__details">
+              <p>{{ post.author }}</p>
+              <p>Likes <span>{{ post.likes }}</span> | Dislikes <span>{{ post.dislikes }}</span></p>
+            </div>
+            <p>{{ post.body }}</p>
+          </header>
+          <div class="post__content">
+            <img :src="post.img" :alt="post.title" />
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.description }}</p>
           </div>
-          <p>{{ post.body }}</p>
-        </header>
-        <div class="post__content">
-          <img :src="post.img" :alt="post.title" />
-          <h2>{{ post.title }}</h2>
-          <p>{{ post.description }}</p>
-        </div>
-        <section class="comments">
-          <div class="actions" data-buttons="4">
-            <button @click="like(post)">Like</button>
-            <button @click="dislike(post)">Dislike</button>
-            <button @click="showComment(post)">Comment</button>
-            <button @click="share(post)">Share</button>
-          </div>
-          <p class="share">
-            <a :href="tweet" target="_blank" rel="noopener" v-show="post.share">Tweet This Bad Boy</a>
-          </p>
-          <div v-show="post.comment">
-            <form @submit.prevent>
-              <label for="name">Your name:</label>
-              <input id="name" type="text" maxlength="100" v-model="post.newName" @keypress.enter="postComment(post)">
-              <label for="comment">Write your comment below:</label>
-              <textarea id="comment" maxlength="300" v-model="post.newMessage" @keypress.enter="postComment(post)"></textarea>
-              <button type="submit" @click="postComment(post)">Post Comment</button>
-            </form>
-            <p class="error" v-show="post.error">
-              Oops! Please write a name (any name) and a comment.</p>
-          </div>
-          <article class="comment" v-for="comment in post.comments">
-            <p class="small-text">{{ comment.name }}</p>
-            <p>{{ comment.message }}</p>
-            <p class="small-text">{{ comment.time }}</p>
-          </article>
-        </section>
-      </article>
+          <section class="comments">
+            <div class="actions" data-buttons="4">
+              <button @click="like(post)">Like</button>
+              <button @click="dislike(post)">Dislike</button>
+              <button @click="showComment(post)">Comment</button>
+              <button @click="share(post)">Share</button>
+            </div>
+            <p class="share">
+              <a :href="tweet" target="_blank" rel="noopener" v-show="post.share">Tweet This Bad Boy</a>
+            </p>
+            <div v-show="post.comment">
+              <form @submit.prevent>
+                <label for="name">Your name:</label>
+                <input id="name" type="text" maxlength="100" v-model="post.newName" @keypress.enter="postComment(post)">
+                <label for="comment">Write your comment below:</label>
+                <textarea id="comment" maxlength="300" v-model="post.newMessage" @keypress.enter="postComment(post)"></textarea>
+                <button type="submit" @click="postComment(post)">Post Comment</button>
+              </form>
+              <p class="error" v-show="post.error">
+                Oops! Please write a name (any name) and a comment.</p>
+            </div>
+            <article class="comment" v-for="comment in comments" v-show="post.api">
+              <p class="small-text">{{ comment.email }}</p>
+              <p>{{ comment.name }}</p>
+            </article>
+            <article class="comment" v-for="comment in post.comments">
+              <p class="small-text">{{ comment.name }}</p>
+              <p>{{ comment.message }}</p>
+              <p class="small-text">{{ comment.time }}</p>
+            </article>
+          </section>
+        </article>
+      </div>
+    </section>
+    <section class="wrapper" data-constrain="most" id="tweets">
+      <h1>Tweets Around Pang</h1>
       <FakeTwitter />
-    </div>
-  </section>
-  <Friends />
-  <Overlay :scoreType="'lowscore'" :scoreMessage="`Wow... you really don't like my app? I'm sorry 😢`" v-show="lowscore === 25" />
-  <Overlay :scoreType="'highscore'" :scoreMessage="`You just reached the high score! Keep Going!`" v-show="highscore === 50" />
-  <Overlay :scoreType="'higherscore'" :scoreMessage="`Oh, okay! Haha, you're having fun! Awesome... Stop.`" v-show="highscore === 250" />
-  <Overlay :scoreType="'highestscore'" :scoreMessage="`Please stop. I didn't code any more surprises. I'm serious.`" v-show="highscore === 500" />
-</main>
+    </section>
+    <Friends />
+  </main>
+  <div class="overlays">
+    <Overlay :scoreType="'lowscore'" :scoreMessage="`Wow... you really don't like my app? I'm sorry 😢`" v-show="lowscore === 25" />
+    <Overlay :scoreType="'highscore'" :scoreMessage="`You just reached the high score! Keep Going!`" v-show="highscore === 50" />
+    <Overlay :scoreType="'higherscore'" :scoreMessage="`Oh, okay! Haha, you're having fun! Awesome... Stop.`" v-show="highscore === 250" />
+    <Overlay :scoreType="'highestscore'" :scoreMessage="`Please stop. I didn't code any more surprises. I'm serious.`" v-show="highscore === 500" />
+  </div>
+</div>
 </template>
 
 <script>
@@ -87,7 +98,8 @@ export default {
           error: false,
           newName: '',
           newMessage: '',
-          comments: []
+          comments: [],
+          api: true
         },
         {
           author: "Former Classmate",
@@ -173,11 +185,31 @@ main {
     gap: var(--gap);
 }
 
-@media only screen and (min-width: 968px) {
+#feed {
+    grid-area: feed;
+}
+
+#tweets {
+    grid-area: tweets;
+}
+
+@media only screen and (min-width: 1000px) {
     main {
         display: grid;
-        grid-template-columns: 2fr 1fr;
-        --gap: revert;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: "feed tweets" "friends tweets";
+
+        section.wrapper {
+            margin-top: 0;
+        }
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    main {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "feed tweets friends";
     }
 }
 </style>

@@ -3,7 +3,7 @@
 @import "sanitize";
 
 :root {
-	--gap: 1em;
+	--gap: 1rem;
 }
 
 html {
@@ -43,10 +43,12 @@ img {
 	height: auto;
 }
 /* Be super sure the height is set to auto for aspect ratios and such using HTML size attributes */
+
 img[height] {
 	height: auto;
 }
 /* Never really liked margins on my headings */
+
 h1,
 h2,
 h3,
@@ -70,6 +72,7 @@ a {
 	}
 }
 /* Use this class instead to put margins on my headings */
+
 .headline {
 	margin-bottom: 1em;
 }
@@ -96,6 +99,7 @@ a {
 	flex-direction: column;
 }
 /* I hear you asking "but what if something needs to be row-reverse?" and well, I haven't had that happen yet so we'll cross that bridge when we get there */
+
 *[data-state="reversed"] {
 	flex-direction: column-reverse !important;
 }

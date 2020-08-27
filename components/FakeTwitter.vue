@@ -16,6 +16,12 @@
       </div>
     </section>
   </article>
+  <article class="grid post" v-show="this.posts.length === 0">
+    <section>
+      <h2>No More Posts</h2>
+      <p>Good job! You've deleted your Twitter feed.</p>
+    </section>
+  </article>
 </div>
 </template>
 
@@ -30,6 +36,7 @@ export default {
   async fetch() {
     this.posts = await fetch("https://jsonplaceholder.typicode.com/posts?userId=1")
       .then(res => res.json());
+    this.deleted = false;
   },
   methods: {
     deleteComment(comment) {
@@ -42,7 +49,7 @@ export default {
       let index = this.posts.indexOf(post);
       if (index > -1) {
         this.posts.splice(index, 1);
-      }
+      };
     }
   }
 }
