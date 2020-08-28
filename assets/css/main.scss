@@ -1,0 +1,261 @@
+@import "_globals";
+@import "fonts";
+@import "sanitize";
+
+:root {
+	--gap: 1rem;
+}
+
+html {
+	min-height: 100vh;
+	color: $rich-black-fogra-29;
+	font-family: $lora;
+	overflow-x: hidden;
+	background-color: $alice-blue;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' x2='0' y1='1' y2='0' gradientTransform='rotate(0,0.5,0.5)'%3E%3Cstop offset='0' stop-color='%230FF'/%3E%3Cstop offset='1' stop-color='%23CF6'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' x1='0' x2='0' y1='0' y2='1' gradientTransform='rotate(0,0.5,0.5)'%3E%3Cstop offset='0' stop-color='%23F00'/%3E%3Cstop offset='1' stop-color='%23FC0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%23FFF' fill-opacity='0' stroke-miterlimit='10'%3E%3Cg stroke='url(%23a)' stroke-width='3.3'%3E%3Cpath transform='translate(-2.8 -1.6) rotate(-1.6 1409 581) scale(0.988)' d='M1409 581 1450.35 511 1490 581z'/%3E%3Ccircle stroke-width='1.1' transform='translate(-10 4) rotate(-0.8 800 450) scale(0.998)' cx='500' cy='100' r='40'/%3E%3Cpath transform='translate(-2.8 6) rotate(-10 401 736) scale(0.998)' d='M400.86 735.5h-83.73c0-23.12 18.74-41.87 41.87-41.87S400.86 712.38 400.86 735.5z'/%3E%3C/g%3E%3Cg stroke='url(%23b)' stroke-width='1'%3E%3Cpath transform='translate(24 2.4) rotate(-0.6 150 345) scale(1.004)' d='M149.8 345.2 118.4 389.8 149.8 434.4 181.2 389.8z'/%3E%3Crect stroke-width='2.2' transform='translate(6 -12) rotate(-14.4 1089 759)' x='1039' y='709' width='100' height='100'/%3E%3Cpath transform='translate(-1.6 -1.6) rotate(-2.4 1400 132) scale(0.98)' d='M1426.8 132.4 1405.7 168.8 1363.7 168.8 1342.7 132.4 1363.7 96 1405.7 96z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+body {
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+#__layout,
+#__nuxt,
+#app {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+#app {
+	gap: var(--gap);
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	margin: auto;
+	height: auto;
+}
+/* Be super sure the height is set to auto for aspect ratios and such using HTML size attributes */
+
+img[height] {
+	height: auto;
+}
+/* Never really liked margins on my headings */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	font-family: $fira;
+}
+
+a {
+	color: $star-command-blue;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+
+	&:visited {
+		color: #551A8B;
+	}
+}
+/* Use this class instead to put margins on my headings */
+
+.headline {
+	margin-bottom: 1em;
+}
+
+.wrapper {
+	width: 95%;
+	max-width: 1600px;
+	margin: auto;
+}
+
+.wrapper[data-constrain="more"] {
+	max-width: 1100px !important;
+}
+
+.wrapper[data-constrain="most"] {
+	max-width: 600px !important;
+}
+
+.flex {
+	display: flex;
+}
+
+.col {
+	flex-direction: column;
+}
+/* I hear you asking "but what if something needs to be row-reverse?" and well, I haven't had that happen yet so we'll cross that bridge when we get there */
+
+*[data-state="reversed"] {
+	flex-direction: column-reverse !important;
+}
+
+.full {
+	width: 100%;
+}
+
+.grid {
+	display: grid;
+	gap: var(--gap);
+}
+
+.two-col {
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.three-col {
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.place-center {
+	place-items: center;
+}
+
+.flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.wrap {
+	flex-wrap: wrap;
+}
+
+.center {
+	text-align: center;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.bold {
+	font-weight: 700;
+}
+
+.page {
+	text-align: center;
+	padding: 3rem 0;
+	border-radius: 1rem;
+	box-shadow: 0 15px 35px 5px $rich-black-fogra-29;
+	background: white;
+}
+
+.comment {
+	border-top: 1px solid $rich-black-fogra-29;
+}
+
+.small-text {
+	font-size: 85%;
+}
+
+.feed {
+	gap: var(--gap);
+}
+
+.post {
+	max-width: 600px;
+	padding: .5rem 1rem;
+	background-color: white;
+	border-radius: 1rem;
+}
+
+.post__details {
+	justify-content: space-between;
+
+	p {
+		margin-bottom: 0;
+		font-size: 85%;
+	}
+
+	span {
+		color: $rich-black-fogra-29;
+		background: $eggshell;
+		padding: 2px 4px;
+		border-radius: 50%;
+		font: {
+			size: 80%;
+		}
+	}
+}
+
+.post__content {
+	border-radius: .5em;
+	background: $alice-blue;
+	box-shadow: 0 0 5px 5px $rich-black-fogra-29;
+	padding: .5em;
+}
+
+.actions {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: .5rem;
+
+	&[data-buttons="1"] {
+		grid-template-columns: 1fr;
+		place-items: center;
+	}
+
+	button {
+		padding: .75em 1em;
+		border-radius: .5em;
+		background: $french-bistre;
+		color: white;
+		font: {
+			size: 80%;
+			family: $fira;
+		}
+	}
+}
+
+.share {
+	text-align: center;
+	margin: 0;
+}
+
+.comments {
+	display: flex;
+	flex-direction: column;
+	gap: var(--gap);
+
+	form {
+		display: flex;
+		flex-direction: column;
+
+		button[type="submit"] {
+			width: max-content;
+		}
+
+		#comment,
+		#name {
+			margin: .5em 0;
+		}
+
+		#comment {
+			resize: none;
+		}
+	}
+}
+
+.error {
+	color: red;
+}
+
+.oops {
+	flex-direction: row-reverse !important;
+	transform: rotate(90deg);
+}
