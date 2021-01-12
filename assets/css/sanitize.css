@@ -3,7 +3,6 @@
 /**
  * Add border box sizing in all browsers (opinionated).
  */
-
 *,
 ::after,
 ::before {
@@ -29,9 +28,7 @@
  *    IE on Windows Phone and in iOS.
  * 6. Breaks words to prevent overflow in all browsers (opinionated).
  */
-
 html {
-  cursor: default;
   /* 1 */
   line-height: 1.5;
   /* 2 */
@@ -53,7 +50,6 @@ html {
 /**
  * Remove the margin in all browsers (opinionated).
  */
-
 body {
   margin: 0;
 }
@@ -61,7 +57,6 @@ body {
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Edge, Firefox, and Safari.
  */
-
 h1 {
   font-size: 2em;
   margin: .67em 0;
@@ -71,7 +66,6 @@ h1 {
 /**
  * Remove the margin on nested lists in Chrome, Edge, IE, and Safari.
  */
-
 dl dl,
 dl ol,
 dl ul,
@@ -82,7 +76,6 @@ ul dl {
 /**
  * Remove the margin on nested lists in Edge 18- and IE.
  */
-
 ol ol,
 ol ul,
 ul ol,
@@ -93,7 +86,6 @@ ul ul {
  * 1. Add the correct sizing in Firefox.
  * 2. Show the overflow in Edge 18- and IE.
  */
-
 hr {
   height: 0;
   /* 1 */
@@ -103,14 +95,12 @@ hr {
 /**
  * Add the correct display in IE.
  */
-
 main {
   display: block;
 }
 /**
  * Remove the list style on navigation lists in all browsers (opinionated).
  */
-
 nav ol,
 nav ul {
   list-style: none;
@@ -120,7 +110,6 @@ nav ul {
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
  */
-
 pre {
   font-family: monospace, monospace;
   /* 1 */
@@ -132,14 +121,12 @@ pre {
 /**
  * Remove the gray background on active links in IE 10.
  */
-
 a {
   background-color: transparent;
 }
 /**
  * Add the correct text decoration in Edge 18-, IE, and Safari.
  */
-
 abbr[title] {
   text-decoration: underline;
   text-decoration: underline dotted;
@@ -147,7 +134,6 @@ abbr[title] {
 /**
  * Add the correct font weight in Chrome, Edge, and Safari.
  */
-
 b,
 strong {
   font-weight: bolder;
@@ -156,7 +142,6 @@ strong {
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
  */
-
 code,
 kbd,
 samp {
@@ -168,7 +153,6 @@ samp {
 /**
  * Add the correct font size in all browsers.
  */
-
 small {
   font-size: 80%;
 }
@@ -177,7 +161,6 @@ small {
 /*
  * Change the alignment on media elements in all browsers (opinionated).
  */
-
 audio,
 canvas,
 iframe,
@@ -189,7 +172,6 @@ video {
 /**
  * Add the correct display in IE 9-.
  */
-
 audio,
 video {
   display: inline-block;
@@ -197,7 +179,6 @@ video {
 /**
  * Add the correct display in iOS 4-7.
  */
-
 audio:not([controls]) {
   display: none;
   height: 0;
@@ -205,28 +186,24 @@ audio:not([controls]) {
 /**
  * Remove the border on iframes in all browsers (opinionated).
  */
-
 iframe {
   border-style: none;
 }
 /**
  * Remove the border on images within links in IE 10-.
  */
-
 img {
   border-style: none;
 }
 /**
  * Change the fill color to match the text color in all browsers (opinionated).
  */
-
 svg:not([fill]) {
   fill: currentColor;
 }
 /**
  * Hide the overflow in IE.
  */
-
 svg:not(:root) {
   overflow: hidden;
 }
@@ -235,7 +212,6 @@ svg:not(:root) {
 /**
  * Collapse border spacing in all browsers (opinionated).
  */
-
 table {
   border-collapse: collapse;
 }
@@ -244,7 +220,6 @@ table {
 /**
  * Remove the margin on controls in Safari.
  */
-
 button,
 input,
 select {
@@ -254,7 +229,6 @@ select {
  * 1. Show the overflow in IE.
  * 2. Remove the inheritance of text transform in Edge 18-, Firefox, and IE.
  */
-
 button {
   overflow: visible;
   /* 1 */
@@ -264,7 +238,6 @@ button {
 /**
  * Correct the inability to style buttons in iOS and Safari.
  */
-
 [type="button"],
 [type="reset"],
 [type="submit"],
@@ -275,7 +248,6 @@ button {
  * 1. Change the inconsistent appearance in all browsers (opinionated).
  * 2. Correct the padding in Firefox.
  */
-
 fieldset {
   border: 1px solid #a0a0a0;
   /* 1 */
@@ -285,7 +257,6 @@ fieldset {
 /**
  * Show the overflow in Edge 18- and IE.
  */
-
 input {
   overflow: visible;
 }
@@ -293,7 +264,6 @@ input {
  * 1. Correct the text wrapping in Edge 18- and IE.
  * 2. Correct the color inheritance from `fieldset` elements in IE.
  */
-
 legend {
   color: inherit;
   /* 2 */
@@ -308,7 +278,6 @@ legend {
  * 1. Add the correct display in Edge 18- and IE.
  * 2. Add the correct vertical alignment in Chrome, Edge, and Firefox.
  */
-
 progress {
   display: inline-block;
   /* 1 */
@@ -318,7 +287,6 @@ progress {
 /**
  * Remove the inheritance of text transform in Firefox.
  */
-
 select {
   text-transform: none;
 }
@@ -327,7 +295,6 @@ select {
  * 2. Remove the default vertical scrollbar in IE.
  * 3. Change the resize direction in all browsers (opinionated).
  */
-
 textarea {
   margin: 0;
   /* 1 */
@@ -339,7 +306,6 @@ textarea {
 /**
  * Remove the padding in IE 10-.
  */
-
 [type="checkbox"],
 [type="radio"] {
   padding: 0;
@@ -348,7 +314,6 @@ textarea {
  * 1. Correct the odd appearance in Chrome, Edge, and Safari.
  * 2. Correct the outline style in Safari.
  */
-
 [type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
@@ -409,14 +374,12 @@ textarea {
 /*
  * Add the correct display in Edge 18- and IE.
  */
-
 details {
   display: block;
 }
 /*
  * Add the correct styles in Edge 18-, IE, and Safari.
  */
-
 dialog {
   background-color: white;
   border: solid;
@@ -441,7 +404,6 @@ dialog:not([open]) {
 /*
  * Add the correct display in all browsers.
  */
-
 summary {
   display: list-item;
 }
@@ -450,14 +412,12 @@ summary {
 /**
  * Add the correct display in IE 9-.
  */
-
 canvas {
   display: inline-block;
 }
 /**
  * Add the correct display in IE.
  */
-
 template {
   display: none;
 }
@@ -468,7 +428,6 @@ template {
  * 2. Remove the tapping delay on clickable elements
       in all browsers (opinionated).
  */
-
 [tabindex],
 a,
 area,
@@ -486,7 +445,6 @@ textarea {
 /**
  * Add the correct display in IE 10-.
  */
-
 [hidden] {
   display: none;
 }
@@ -495,14 +453,12 @@ textarea {
 /**
  * Change the cursor on busy elements in all browsers (opinionated).
  */
-
 [aria-busy="true"] {
   cursor: progress;
 }
 /*
  * Change the cursor on control elements in all browsers (opinionated).
  */
-
 [aria-controls] {
   cursor: pointer;
 }
@@ -510,7 +466,6 @@ textarea {
  * Change the cursor on disabled, not-editable, or otherwise
  * inoperable elements in all browsers (opinionated).
  */
-
 [aria-disabled="true"],
 [disabled] {
   cursor: not-allowed;
@@ -519,7 +474,6 @@ textarea {
  * Change the display on visually hidden accessible elements
  * in all browsers (opinionated).
  */
-
 [aria-hidden="false"][hidden] {
   display: initial;
 }

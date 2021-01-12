@@ -53,7 +53,7 @@
       </div>
     </section>
     <section class="wrapper" data-constrain="most" id="tweets">
-      <h1>Tweets Around Pang</h1>
+      <h1>Tweets Around NotSocial</h1>
       <FakeTwitter />
     </section>
     <Friends />

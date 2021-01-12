@@ -1,2 +1,4 @@
 # pang
-A new type of social media
+> Merriam-Webster defines _pang_ as "a sharp attack of mental anguish."
+
+So you know, basically all social media.

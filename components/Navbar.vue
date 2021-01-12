@@ -1,12 +1,12 @@
 <template>
 <header class="flex wrapper header" data-constrain="more">
   <div class="grow">
-    <img style="margin: 0;" src="~/assets/img/pang_57x57.png" width="42" height="42">
+    <img style="margin: 0;" src="~/assets/img/logos/android-chrome-192x192.png" width="42" height="42" alt="NotSocial">
   </div>
   <nav class="grow">
     <ul class="flex full">
       <li>
-        <NuxtLink to="/" aria-label="Your Feed"><svg height="42" viewBox="0 0 21 21" width="42" xmlns="http://www.w3.org/2000/svg">
+        <NuxtLink to="/" aria-label="Your Feed"><svg height="42" viewBox="0 0 21 21" width="42" xmlns="http://www.w3.org/2000/svg" title="Your Feed">
             <g fill="none" fill-rule="evenodd" stroke="#2a2e3b" stroke-linecap="round" stroke-linejoin="round" transform="translate(1 4)">
               <path d="m3.5 3.165h9" />
               <path
@@ -19,11 +19,11 @@
           </svg></NuxtLink>
       </li>
       <li>
-        <NuxtLink to="/games/" aria-label="Your Games"><svg height="42" viewBox="0 0 21 21" width="42" xmlns="http://www.w3.org/2000/svg">
+        <NuxtLink to="/games/" aria-label="Your Games"><svg height="42" viewBox="0 0 21 21" width="42" xmlns="http://www.w3.org/2000/svg" title="Your Games">
             <path d="m6.5 7.5h4l-6 9v-6.997l-4-.003 6-9z" fill="none" stroke="#2a2e3b" stroke-linecap="round" stroke-linejoin="round" transform="translate(5 2)" /></svg></NuxtLink>
       </li>
       <li>
-        <NuxtLink to="/messages/" aria-label="Your Messages"><svg height="42" viewBox="0 0 21 21" width="42" xmlns="http://www.w3.org/2000/svg">
+        <NuxtLink to="/messages/" aria-label="Your Messages"><svg height="42" viewBox="0 0 21 21" width="42" xmlns="http://www.w3.org/2000/svg" title="Your Messages">
             <g fill="none" fill-rule="evenodd" stroke="#2a2e3b" stroke-linecap="round" stroke-linejoin="round" transform="translate(1 1)">
               <path
                 d="m15.5 4.5c1.6568542 0 3 1.34314575 3 3v5c0 1.6568542-1.3431458 3-3 3l-2.468-.001-1.7152977 2.4298518c-.1639804.2320786-.4176379.3818336-.6960544.4156462l-.1206479.0072945c-.55228475 0-1-.4477152-1-1l-.001-1.8527925-.999.001c-1.65685425 0-3-1.3431458-3-3v-5c0-1.65685425 1.34314575-3 3-3z"
@@ -34,7 +34,7 @@
           </svg></NuxtLink>
       </li>
       <li>
-        <NuxtLink to="/account/" aria-label="Your Account"><svg height="42" viewBox="0 0 21 21" width="42" xmlns="http://www.w3.org/2000/svg">
+        <NuxtLink to="/account/" aria-label="Your Account"><svg height="42" viewBox="0 0 21 21" width="42" xmlns="http://www.w3.org/2000/svg" title="Your Account">
             <g fill="none" fill-rule="evenodd" stroke="#2a2e3b" stroke-linecap="round" stroke-linejoin="round" transform="translate(1 2)">
               <path
                 d="m7.5.5c1.65685425 0 3 1.34314575 3 3v1c0 1.65685425-1.34314575 3-3 3s-3-1.34314575-3-3v-1c0-1.65685425 1.34314575-3 3-3zm7 14c0-.2427251 0-.4854502 0-.7281753 0-3.1864098-3.6862915-5.2718247-7-5.2718247s-7 2.0854149-7 5.2718247v.7281753c0 .5522847.44771525 1 1 1h12c.5522847 0 1-.4477153 1-1z" />

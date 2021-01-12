@@ -7,7 +7,7 @@ export default {
 
   // Headers of the page
   head: {
-    title: "Pang | A New Type of Social Media",
+    title: "NotSocial | A New Type of Social Media",
     meta: [{
         charset: "utf-8"
       },
@@ -22,15 +22,15 @@ export default {
       },
       {
         name: "twitter:title",
-        content: "Pang | A New Type of Social Media"
+        content: "NotSocial | A New Type of Social Media"
       },
       {
         name: "twitter:description",
-        content: "Welcome to Pang: a new type of social media where it's just you and only you."
+        content: "Welcome to NotSocial: a new type of social media where it's just you and only you."
       },
       {
         name: "twitter:image",
-        content: "~/assets/img/pang.png"
+        content: "~/assets/img/notsocial-logo.png"
       },
       {
         name: "twitter:card",
