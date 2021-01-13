@@ -17,11 +17,21 @@
 [build.processing.images]
   compress = true
 
-  # Custom headers
-  [[headers]]
-    for = "/*"
-    [headers.values]
-      X-Content-Type-Options = "nosniff"
-      X-Frame-Options = "SAMEORIGIN"
-      X-XSS-Protection = "1"
-      Content-Security-Policy = "default-src 'self' https://d33wubrfki0l68.cloudfront.net https://images.dog.ceo/ data: 'unsafe-inline'"
+# Redirect from the default Netlify site to my custom domain
+[[redirects]]
+  from = "https://pang.netlify.com/*"
+  to = "https://www.notsocial.app/:splat"
+  status = 301
+  force = true
+
+# Custom headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    X-XSS-Protection = "1"
+    Content-Security-Policy = "default-src 'self' https://www.notsocial.app/ https://d33wubrfki0l68.cloudfront.net https://images.dog.ceo/ data: 'unsafe-inline'"
+
+[[plugins]]
+  package = "netlify-plugin-image-optim"

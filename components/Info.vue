@@ -1,7 +1,7 @@
 <template>
 <footer>
   <div class="wrapper">
-    <img class="logo" src="~/assets/img/notsocial-logo.png" alt="NotSocial" width="200" height="200">
+    <img class="logo" src="~/assets/img/notsocial-logo.png" alt="NotSocial. Since 2020, because you needed it" width="200" height="200">
     <h2>NotSocial: a New Type of Social Media</h2>
     <p>Thanks for using NotSocial; I hope you enjoyed your time here. Now, look at all these great dogs.</p>
     <div class="grid activities">
