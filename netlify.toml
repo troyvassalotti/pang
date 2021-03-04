@@ -20,7 +20,7 @@
 # Redirect from the default Netlify site to my custom domain
 [[redirects]]
   from = "https://pang.netlify.com/*"
-  to = "https://www.notsocial.app/:splat"
+  to = "https://notsocial.app/:splat"
   status = 301
   force = true
 
