@@ -17,13 +17,6 @@
 [build.processing.images]
   compress = true
 
-# Redirect from the default Netlify site to my custom domain
-[[redirects]]
-  from = "https://pang.netlify.com/*"
-  to = "https://notsocial.app/:splat"
-  status = 301
-  force = true
-
 # Custom headers
 [[headers]]
   for = "/*"
